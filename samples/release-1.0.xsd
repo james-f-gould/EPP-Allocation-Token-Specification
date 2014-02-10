@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema targetNamespace="urn:ietf:params:xml:ns:release-1.0"
+  xmlns:allocationToken="urn:ietf:params:xml:ns:release-1.0"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  
+  <annotation>
+    <documentation>
+      Extensible Provisioning Protocol v1.0
+      Release (Sample) Extension.
+    </documentation>
+  </annotation>
+
+  <!--Used as extension to update for the new "release" verb -->
+  <element name="release"/>
+                                 
+   <!-- End of schema.-->   
+</schema>
