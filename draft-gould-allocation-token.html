@@ -1,9 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en"><head><title>Allocation Token Extension for the Extensible Provisioning Protocol (EPP)</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0127)file:///D:/santosh.kalsangrah/Desktop/XML2RFC%20Processor%20with%20Warnings%20&%20Errors_files/draft-gould-allocation-token.htm -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Allocation Token Extension for the Extensible Provisioning Protocol (EPP)</title>
+
 <meta name="description" content="Allocation Token Extension for the Extensible Provisioning Protocol (EPP)">
-<meta name="generator" content="xml2rfc v1.36 (http://xml.resource.org/)">
-<style type='text/css'><!--
+<meta name="generator" content="xml2rfc v1.37pre1 (http://xml.resource.org/)">
+<style type="text/css"><!--
         body {
                 font-family: verdana, charcoal, helvetica, arial, sans-serif;
                 font-size: small; color: #000; background-color: #FFF;
@@ -139,15 +140,15 @@
 --></style>
 </head>
 <body>
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
-<table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
-<tr><td class="header">Network Working Group</td><td class="header">J. Gould</td></tr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<table summary="layout" width="66%" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><table summary="layout" width="100%" border="0" cellpadding="2" cellspacing="1">
+<tbody><tr><td class="header">Network Working Group</td><td class="header">J. Gould</td></tr>
 <tr><td class="header">Internet-Draft</td><td class="header">VeriSign, Inc.</td></tr>
 <tr><td class="header">Intended status: Standards Track</td><td class="header">T. Tran</td></tr>
 <tr><td class="header">Expires: August 14, 2014</td><td class="header">Neustar</td></tr>
 <tr><td class="header">&nbsp;</td><td class="header">February 10, 2014</td></tr>
-</table></td></tr></table>
-<h1><br />Allocation Token Extension for the Extensible Provisioning Protocol (EPP)<br />draft-gould-allocation-token-00</h1>
+</tbody></table></td></tr></tbody></table>
+<h1><br>Allocation Token Extension for the Extensible Provisioning Protocol (EPP)<br>draft-gould-allocation-token-01</h1>
 
 <h3>Abstract</h3>
 
@@ -171,7 +172,7 @@ Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 Internet-Drafts are draft documents valid for a maximum of six months
 and may be updated, replaced, or obsoleted by other documents at any time.
 It is inappropriate to use Internet-Drafts as reference material or to cite
-them other than as &ldquo;work in progress.&rdquo;</p>
+them other than as “work in progress.”</p>
 <p>
 This Internet-Draft will expire on August 14, 2014.</p>
 
@@ -189,66 +190,68 @@ to this document. Code Components extracted from this document must
 include Simplified BSD License text as described in Section 4.e of
 the Trust Legal Provisions and are provided without warranty as
 described in the Simplified BSD License.</p>
-<a name="toc"></a><br /><hr />
+<a name="toc"></a><br><hr>
 <h3>Table of Contents</h3>
 <p class="toc">
-<a href="#anchor1">1.</a>&nbsp;
-Introduction<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor2">1.1.</a>&nbsp;
-Conventions Used in This Document<br />
-<a href="#attrs">2.</a>&nbsp;
-Object Attributes<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#allocationToken">2.1.</a>&nbsp;
-Allocation Token<br />
-<a href="#commands">3.</a>&nbsp;
-EPP Command Mapping<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#queryCommands">3.1.</a>&nbsp;
-EPP Query Commands<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#checkCommand">3.1.1.</a>&nbsp;
-EPP &lt;check&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#infoCommand">3.1.2.</a>&nbsp;
-EPP &lt;info&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#transferQueryCommand">3.1.3.</a>&nbsp;
-EPP &lt;transfer&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#transformCommands">3.2.</a>&nbsp;
-EPP Transform Commands<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#createCommand">3.2.1.</a>&nbsp;
-EPP &lt;create&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#deleteCommand">3.2.2.</a>&nbsp;
-EPP &lt;delete&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#renewCommand">3.2.3.</a>&nbsp;
-EPP &lt;renew&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#transferCommand">3.2.4.</a>&nbsp;
-EPP &lt;transfer&gt; Command<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#updateCommand">3.2.5.</a>&nbsp;
-EPP &lt;update&gt; Command<br />
-<a href="#syntax">4.</a>&nbsp;
-Formal Syntax<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#anchor3">4.1.</a>&nbsp;
-Allocation Token Extension Schema<br />
-<a href="#anchor4">5.</a>&nbsp;
-Change History<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="#version-00">5.1.</a>&nbsp;
-Version 00<br />
-<a href="#IANA">6.</a>&nbsp;
-IANA Considerations<br />
-<a href="#Security">7.</a>&nbsp;
-Security Considerations<br />
-<a href="#rfc.references1">8.</a>&nbsp;
-Normative References<br />
-<a href="#rfc.authors">&#167;</a>&nbsp;
-Authors' Addresses<br />
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#anchor1">1.</a>&nbsp;
+Introduction<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#anchor2">1.1.</a>&nbsp;
+Conventions Used in This Document<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#attrs">2.</a>&nbsp;
+Object Attributes<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">2.1.</a>&nbsp;
+Allocation Token<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#commands">3.</a>&nbsp;
+EPP Command Mapping<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#queryCommands">3.1.</a>&nbsp;
+EPP Query Commands<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#checkCommand">3.1.1.</a>&nbsp;
+EPP &lt;check&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#infoCommand">3.1.2.</a>&nbsp;
+EPP &lt;info&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#transferQueryCommand">3.1.3.</a>&nbsp;
+EPP &lt;transfer&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#transformCommands">3.2.</a>&nbsp;
+EPP Transform Commands<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#createCommand">3.2.1.</a>&nbsp;
+EPP &lt;create&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#deleteCommand">3.2.2.</a>&nbsp;
+EPP &lt;delete&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#renewCommand">3.2.3.</a>&nbsp;
+EPP &lt;renew&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#transferCommand">3.2.4.</a>&nbsp;
+EPP &lt;transfer&gt; Command<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#updateCommand">3.2.5.</a>&nbsp;
+EPP &lt;update&gt; Command<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#syntax">4.</a>&nbsp;
+Formal Syntax<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#anchor3">4.1.</a>&nbsp;
+Allocation Token Extension Schema<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#anchor4">5.</a>&nbsp;
+Change History<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#version-00">5.1.</a>&nbsp;
+Version 00<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#version-01">5.2.</a>&nbsp;
+Version 01<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#IANA">6.</a>&nbsp;
+IANA Considerations<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#Security">7.</a>&nbsp;
+Security Considerations<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#rfc.references1">8.</a>&nbsp;
+Normative References<br>
+<a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#rfc.authors">§</a>&nbsp;
+Authors' Addresses<br>
 </p>
-<br clear="all" />
+<br clear="all">
 
-<a name="anchor1"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="anchor1"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.1"></a><h3>1.&nbsp;
 Introduction</h3>
 
 <p>This document describes an extension mapping for version 1.0 of the
-      <a class='info' href='#RFC5730'>Extensible Provisioning Protocol (EPP)<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5730].
-      This mapping, an extension to EPP object mappings like the <a class='info' href='#RFC5731'>EPP domain name mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731], for passing 
+      <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">Extensible Provisioning Protocol (EPP)<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a> [RFC5730].
+      This mapping, an extension to EPP object mappings like the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">EPP domain name mapping<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a> [RFC5731], for passing 
       an allocation token one of the EPP transform commands including 
       create, update, and transfer.  The allocation token is known to the 
       server to authorize a client that passes a matching allocation token 
@@ -258,14 +261,14 @@ Introduction</h3>
       authorized client for passing out-of-band to a client that 
       uses it with an EPP transform command.
 </p>
-<a name="anchor2"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="anchor2"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.1.1"></a><h3>1.1.&nbsp;
 Conventions Used in This Document</h3>
 
 <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
         "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this
-        document are to be interpreted as described in <a class='info' href='#RFC2119'>RFC 2119<span> (</span><span class='info'>Bradner, S., &ldquo;Key words for use in RFCs to Indicate Requirement Levels,&rdquo; March&nbsp;1997.</span><span>)</span></a> [RFC2119].
+        document are to be interpreted as described in <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC2119">RFC 2119<span> (</span><span class="info">Bradner, S., “Key words for use in RFCs to Indicate Requirement Levels,” March&nbsp;1997.</span><span>)</span></a> [RFC2119].
 </p>
 <p>XML is case sensitive. Unless stated otherwise, XML specifications
         and examples provided in this document MUST be interpreted in the
@@ -284,16 +287,16 @@ Conventions Used in This Document</h3>
         a proper namespace-aware XML parser and serializer to interpret and
         output the XML documents.
 </p>
-<a name="attrs"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="attrs"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.2"></a><h3>2.&nbsp;
 Object Attributes</h3>
 
-<p>This extension adds additional elements to EPP object mappings like the <a class='info' href='#RFC5731'>EPP domain name mapping<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5731]. Only those new elements
+<p>This extension adds additional elements to EPP object mappings like the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">EPP domain name mapping<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a> [RFC5731]. Only those new elements
       are described here.
 </p>
-<a name="allocationToken"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="allocationToken"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.2.1"></a><h3>2.1.&nbsp;
 Allocation Token</h3>
 
@@ -308,21 +311,20 @@ Allocation Token</h3>
 </p>
 <p>An example &lt;allocationToken:allocationToken&gt; element 
             with value of "abc123":
-</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-&lt;allocationToken:allocationToken xmlns:allocationToken=
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>&lt;allocationToken:allocationToken xmlns:allocationToken=
           "urn:ietf:params:xml:ns:allocationToken-1.0"&gt;
   abc123
 &lt;/allocationToken:allocationToken&gt;</pre></div>
-<a name="commands"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="commands"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3"></a><h3>3.&nbsp;
 EPP Command Mapping</h3>
 
 <p>A detailed description of the EPP syntax and semantics can be found
-      in the EPP core protocol specification <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+      in the EPP core protocol specification <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="queryCommands"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="queryCommands"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.1"></a><h3>3.1.&nbsp;
 EPP Query Commands</h3>
 
@@ -330,39 +332,166 @@ EPP Query Commands</h3>
         if an object is known to the server, &lt;info&gt; to retrieve detailed information associated 
         with an object, and &lt;transfer&gt; to retrieve object transfer status information.
 </p>
-<a name="checkCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="checkCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.1.1"></a><h3>3.1.1.&nbsp;
 EPP &lt;check&gt; Command</h3>
 
-<p>This extension does not add any elements to the EPP &lt;check&gt; command 
-       or &lt;check&gt; response described in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+<p> This extension defines additional elements to extend the EPP &lt;check&gt;
+        command of an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="infoCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<p>This extension allow clients to check the availability of an object with allocationToken, as described in <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>,  
+          provided in the request. This allow clients to check if an object can be created or not 
+          with allocationToken they are providing. 
+</p>
+<p>Example &lt;check&gt; command with the allocationToken:allocationToken 
+            extension for the example.tld domain name:
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>C:&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+C:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
+C: xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+C: xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0
+C: epp-1.0.xsd"&gt;
+C: &lt;command&gt;
+C:  &lt;check&gt;
+C:   &lt;domain:check
+C:   xmlns="urn:ietf:params:xml:ns:domain-1.0"
+C:   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+C:   xsi:schemaLocation="urn:ietf:params:xml:ns:domain-1.0
+C:   domain-1.0.xsd"&gt;
+C:    &lt;name&gt;example.tld&lt;/name&gt;
+C:   &lt;/domain:check&gt;
+C:  &lt;/check&gt;
+C:  &lt;extension&gt;
+C:   &lt;allocationToken:allocationToken
+C:   xmlns="urn:ietf:params:xml:ns:allocationToken-1.0"
+C:   xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
+C:   xsi:schemaLocation="urn:ietf:params:xml:ns:allocationToken-1.0
+C:   allocationToken-1.0.xsd"&gt;abc123&lt;/allocationToken:allocationToken&gt;
+C:  &lt;/extension&gt;
+C:  &lt;clTRID&gt;ABC-DEF-12345&lt;/clTRID&gt;
+C: &lt;/command&gt;
+C:&lt;/epp&gt;</pre></div>
+<p>If the query was successful, the server replies with an &lt;check&gt; response providing 
+             availability status of queried object.
+</p>
+<p>Example &lt;check&gt; domain response using the &lt;allocationToken:allocationToken&gt; extension:
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>S:&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+S:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
+S: xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+S: xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0
+S: epp-1.0.xsd"&gt;
+S: &lt;response&gt;
+S:  &lt;result code="1000"&gt;
+S:   &lt;msg lang="en-US"&gt;Command completed successfully&lt;/msg&gt;
+S:  &lt;/result&gt;
+S:  &lt;resData&gt;
+S:   &lt;domain:chkData
+S:   xmlns="urn:ietf:params:xml:ns:domain-1.0"
+S:   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+S:   xsi:schemaLocation="urn:ietf:params:xml:ns:domain-1.0
+S:   domain-1.0.xsd"&gt;
+S:    &lt;domain:cd&gt;
+S:     &lt;domain:name avail="0"&gt;example.tld&lt;/domain:name&gt;
+S:     &lt;domain:reason&gt;Invalid domain-token pair&lt;/domain:reason&gt;
+S:    &lt;/domain:cd&gt;
+S:   &lt;/domain:chkData&gt;
+S:  &lt;/resData&gt;
+S:  &lt;trID&gt;
+S:   &lt;clTRID&gt;ABC-DEF-12345&lt;/clTRID&gt;
+S:   &lt;svTRID&gt;54321-XYZ&lt;/svTRID&gt;
+S:  &lt;/trID&gt;
+S: &lt;/response&gt;
+S:&lt;/epp&gt;
+</pre></div>
+<p>Example &lt;check&gt; command with the allocationToken:allocationToken 
+            extension for the example.tld and example2.tld domain names. Here availability of domains 
+			example.tld and example2.tld is checked against allocation token 'abc123' provided in request :
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>C:&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+C:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
+C: xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+C: xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0
+C: epp-1.0.xsd"&gt;
+C: &lt;command&gt;
+C:  &lt;check&gt;
+C:   &lt;domain:check
+C:   xmlns="urn:ietf:params:xml:ns:domain-1.0"
+C:   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+C:   xsi:schemaLocation="urn:ietf:params:xml:ns:domain-1.0
+C:   domain-1.0.xsd"&gt;
+C:    &lt;name&gt;example.tld&lt;/name&gt;
+C:    &lt;name&gt;example2.tld&lt;/name&gt;
+C:   &lt;/domain:check&gt;
+C:  &lt;/check&gt;
+C:  &lt;extension&gt;
+C:   &lt;allocationToken:allocationToken
+C:   xmlns="urn:ietf:params:xml:ns:allocationToken-1.0"
+C:   xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
+C:   xsi:schemaLocation="urn:ietf:params:xml:ns:allocationToken-1.0
+C:   allocationToken-1.0.xsd"&gt;abc123&lt;/allocationToken:allocationToken&gt;
+C:  &lt;/extension&gt;
+C:  &lt;clTRID&gt;ABC-DEF-12345&lt;/clTRID&gt;
+C: &lt;/command&gt;
+C:&lt;/epp&gt;
+</pre></div>
+<p>Example &lt;check&gt; domain response for multiple domain names in 
+            &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt; extension:
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>S:&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+S:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"
+S: xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+S: xsi:schemaLocation="urn:ietf:params:xml:ns:epp-1.0
+S: epp-1.0.xsd"&gt;
+S: &lt;response&gt;
+S:  &lt;result code="1000"&gt;
+S:   &lt;msg lang="en-US"&gt;Command completed successfully&lt;/msg&gt;
+S:  &lt;/result&gt;
+S:  &lt;resData&gt;
+S:   &lt;domain:chkData
+S:   xmlns="urn:ietf:params:xml:ns:domain-1.0"
+S:   xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"
+S:   xsi:schemaLocation="urn:ietf:params:xml:ns:domain-1.0
+S:   domain-1.0.xsd"&gt;
+S:    &lt;domain:cd&gt;
+S:     &lt;domain:name avail="0"&gt;example.tld&lt;/domain:name&gt;
+S:     &lt;domain:reason&gt;Invalid domain-token pair&lt;/domain:reason&gt;
+S:    &lt;/domain:cd&gt;
+S:    &lt;domain:cd&gt;
+S:     &lt;domain:name avail="1"&gt;example2.tld&lt;/domain:name&gt;
+S:    &lt;/domain:cd&gt;
+S:   &lt;/domain:chkData&gt;
+S:  &lt;/resData&gt;
+S:  &lt;trID&gt;
+S:   &lt;clTRID&gt;ABC-DEF-12345&lt;/clTRID&gt;
+S:   &lt;svTRID&gt;54321-XYZ&lt;/svTRID&gt;
+S:  &lt;/trID&gt;
+S: &lt;/response&gt;
+S:&lt;/epp&gt;
+</pre></div>
+<p>This extension does not add any elements to the EPP &lt;check&gt; response described in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
+</p>
+<a name="infoCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.1.2"></a><h3>3.1.2.&nbsp;
 EPP &lt;info&gt; Command</h3>
 
 <p>This extension defines additional elements to extend the EPP
-        &lt;info&gt; command of an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+        &lt;info&gt; command of an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>.
 </p>
 <p>The EPP &lt;info&gt; command allows a client to request information on an 
-       existing object.  Authorized clients MAY retrieve the <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a> along 
+       existing object.  Authorized clients MAY retrieve the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a> along 
        with the other object information using the &lt;allocationToken:info&gt; element 
        that identifies the extension namespace.  The &lt;allocationToken:info&gt; 
        element is an empty element that serves as a marker to the server to 
        return the &lt;allocationToken:allocationToken&gt; element, defined in 
-       <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a> in the info response.  If the client is not 
-       authorized to receive the <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, the server MUST 
+       <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a> in the info response.  If the client is not 
+       authorized to receive the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, the server MUST 
        return an EPP error result code of 2201.  If the client is authorized to 
-       receive the <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, but there is no <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a> 
+       receive the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, but there is no <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a> 
        associated with the object, the server MUST return an EPP error result code of 
        2303 object referencing the &lt;allocationToken:info&gt; element.
 </p>
 <p>Example &lt;info&gt; command with the allocationToken:info 
             extension for the example.tld domain name:
-</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 C:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
 C:  &lt;command&gt;
 C:   &lt;info&gt;
@@ -383,12 +512,11 @@ C:  &lt;/command&gt;
 C:&lt;/epp&gt;</pre></div>
 <p>If the query was successful, the server replies with an
           &lt;allocationToken:allocationToken&gt; element, as described in 
-          <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>.
+          <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>.
 </p>
 <p>Example &lt;info&gt; domain response using the 
             &lt;allocationToken:allocationToken&gt; extension:
-</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-S:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>S:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 S:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
 S:  &lt;response&gt;
 S:    &lt;result code="1000"&gt;
@@ -424,16 +552,16 @@ S:      &lt;svTRID&gt;54321-XYZ&lt;/svTRID&gt;
 S:    &lt;/trID&gt;
 S:  &lt;/response&gt;
 S:&lt;/epp&gt;</pre></div>
-<a name="transferQueryCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="transferQueryCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.1.3"></a><h3>3.1.3.&nbsp;
 EPP &lt;transfer&gt; Command</h3>
 
 <p>This extension does not add any elements to the EPP &lt;transfer&gt; query command 
-       or &lt;transfer&gt; response described in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+       or &lt;transfer&gt; response described in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="transformCommands"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="transformCommands"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.2"></a><h3>3.2.&nbsp;
 EPP Transform Commands</h3>
 
@@ -442,24 +570,23 @@ EPP Transform Commands</h3>
         &lt;transfer&gt; to manage object sponsorship changes, and &lt;update&gt; to change information associated 
         with an object.
 </p>
-<a name="createCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="createCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.2.1"></a><h3>3.2.1.&nbsp;
 EPP &lt;create&gt; Command</h3>
 
 <p>This extension defines additional elements to extend the EPP
-        &lt;create&gt; command of an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+        &lt;create&gt; command of an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>.
 </p>
 <p>The EPP &lt;create&gt; command provides a transform operation that allows a client to create an object.  
-       In addition to the EPP command elements described in an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>, the command MUST contain a 
-       child &lt;allocationToken:allocationToken&gt; element, as defined in <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, that identifies the extension namespace 
-       for the client to be authorized to create and allocate the object.  If the <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a> does not match 
-       the object's <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, the server MUST server MUST 
+       In addition to the EPP command elements described in an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>, the command MUST contain a 
+       child &lt;allocationToken:allocationToken&gt; element, as defined in <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, that identifies the extension namespace 
+       for the client to be authorized to create and allocate the object.  If the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a> does not match 
+       the object's <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, the server MUST 
        return an EPP error result code of 2201.:
 </p>
 <p>Example &lt;create&gt; command to create a domain object with an allocation token:
-</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 C:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
 C:  &lt;command&gt;
 C:    &lt;create&gt;
@@ -485,44 +612,43 @@ C:    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
 C:  &lt;/command&gt;
 C:&lt;/epp&gt;</pre></div>
 <p>This extension does not add any elements to the EPP &lt;create&gt; response described 
-       in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+       in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="deleteCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="deleteCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.2.2"></a><h3>3.2.2.&nbsp;
 EPP &lt;delete&gt; Command</h3>
 
 <p>This extension does not add any elements to the EPP &lt;delete&gt; command 
-       or &lt;delete&gt; response described in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+       or &lt;delete&gt; response described in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="renewCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="renewCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.2.3"></a><h3>3.2.3.&nbsp;
 EPP &lt;renew&gt; Command</h3>
 
 <p>This extension does not add any elements to the EPP &lt;renew&gt; command 
-       or &lt;renew&gt; response described in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+       or &lt;renew&gt; response described in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="transferCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="transferCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.2.4"></a><h3>3.2.4.&nbsp;
 EPP &lt;transfer&gt; Command</h3>
 
 <p>This extension defines additional elements to extend the EPP
-        &lt;transfer&gt; request command of an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+        &lt;transfer&gt; request command of an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>.
 </p>
 <p>The EPP &lt;transfer&gt; request command provides a transform operation that allows a client to request the 
        transfer of an object.  
-       In addition to the EPP command elements described in an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>, the command MUST contain a 
-       child &lt;allocationToken:allocationToken&gt; element, as defined in <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, that identifies the extension namespace 
-       for the client to be authorized to transfer and allocate the object.  If the <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a> does not match 
-       the object's <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, the server MUST server MUST 
+       In addition to the EPP command elements described in an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>, the command MUST contain a 
+       child &lt;allocationToken:allocationToken&gt; element, as defined in <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, that identifies the extension namespace 
+       for the client to be authorized to transfer and allocate the object.  If the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a> does not match 
+       the object's <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, the server MUST 
        return an EPP error result code of 2201.:
 </p>
 <p>Example &lt;transfer&gt; request command to allocate the domain object with 
             the allocation token:
-</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 C:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
 C:  &lt;command&gt;
 C:    &lt;transfer op="request"&gt;
@@ -546,29 +672,28 @@ C:    &lt;clTRID&gt;ABC-12345&lt;/clTRID&gt;
 C:  &lt;/command&gt;
 C:&lt;/epp&gt;</pre></div>
 <p>This extension does not add any elements to the EPP &lt;transfer&gt; response described 
-       in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+       in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="updateCommand"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="updateCommand"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.3.2.5"></a><h3>3.2.5.&nbsp;
 EPP &lt;update&gt; Command</h3>
 
 <p>This extension defines additional elements to extend an extension of an empty EPP
-        &lt;update&gt; command of an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>.  An 
+        &lt;update&gt; command of an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>.  An 
         example of an extension of an empty EPP &lt;update&gt; command is the definition of the 
-        restore command within <a class='info' href='#RFC3915'>[RFC3915]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Domain Registry Grace Period Mapping for the Extensible Provisioning Protocol (EPP),&rdquo; September&nbsp;2004.</span><span>)</span></a>.
+        restore command within <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC3915">[RFC3915]<span> (</span><span class="info">Hollenbeck, S., “Domain Registry Grace Period Mapping for the Extensible Provisioning Protocol (EPP),” September&nbsp;2004.</span><span>)</span></a>.
 </p>
 <p>An extension of an empty EPP &lt;update&gt; command defines a new verb that transforms an object.    
-       In addition to the EPP command elements described in an object mapping like <a class='info' href='#RFC5731'>[RFC5731]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP) Domain Name Mapping,&rdquo; August&nbsp;2009.</span><span>)</span></a>, the command MUST contain a 
-       child &lt;allocationToken:allocationToken&gt; element, as defined in <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, that identifies the extension namespace 
-       for the client to be authorized to allocate the object.  If the <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a> does not match 
-       the object's <a class='info' href='#allocationToken'>Section&nbsp;2.1<span> (</span><span class='info'>Allocation Token</span><span>)</span></a>, the server MUST server MUST 
+       In addition to the EPP command elements described in an object mapping like <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5731">[RFC5731]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP) Domain Name Mapping,” August&nbsp;2009.</span><span>)</span></a>, the command MUST contain a 
+       child &lt;allocationToken:allocationToken&gt; element, as defined in <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, that identifies the extension namespace 
+       for the client to be authorized to allocate the object.  If the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a> does not match 
+       the object's <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#allocationToken">Section&nbsp;2.1<span> (</span><span class="info">Allocation Token</span><span>)</span></a>, the server MUST 
        return an EPP error result code of 2201.:
 </p>
 <p>Example use an extension of an empty &lt;update&gt; command to release a 
             domain object with an allocation token:
-</p><div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
+</p><div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
 C:&lt;epp xmlns="urn:ietf:params:xml:ns:epp-1.0"&gt;
 C:  &lt;command&gt;
 C:    &lt;update&gt;
@@ -590,10 +715,10 @@ C:    &lt;clTRID&gt;ABC-12345-XYZ&lt;/clTRID&gt;
 C:  &lt;/command&gt;
 C:&lt;/epp&gt;</pre></div>
 <p>This extension does not add any elements to the EPP &lt;update&gt; response described 
-       in the <a class='info' href='#RFC5730'>[RFC5730]<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a>.
+       in the <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">[RFC5730]<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a>.
 </p>
-<a name="syntax"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="syntax"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.4"></a><h3>4.&nbsp;
 Formal Syntax</h3>
 
@@ -606,12 +731,11 @@ Formal Syntax</h3>
       BEGIN and END tags are not part of the schema; they are used to note the
       beginning and ending of the schema for URI registration purposes.
 </p>
-<a name="anchor3"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="anchor3"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.4.1"></a><h3>4.1.&nbsp;
 Allocation Token Extension Schema</h3>
-<div style='display: table; width: 0; margin-left: 3em; margin-right: auto'><pre>
-BEGIN
+<div style="display: table; width: 0; margin-left: 3em; margin-right: auto"><pre>BEGIN
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;schema targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
@@ -643,13 +767,13 @@ BEGIN
    &lt;!-- End of schema.--&gt;
 &lt;/schema&gt;
 END</pre></div>
-<a name="anchor4"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="anchor4"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.5"></a><h3>5.&nbsp;
 Change History</h3>
 
-<a name="version-00"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="version-00"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.5.1"></a><h3>5.1.&nbsp;
 Version 00</h3>
 
@@ -659,14 +783,25 @@ Version 00</h3>
 </li>
 </ol>
 
-<a name="IANA"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="version-01"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
+<a name="rfc.section.5.2"></a><h3>5.2.&nbsp;
+Version 01</h3>
+
+<p></p>
+<ol class="text">
+<li>Updates related to EPP check command.
+</li>
+</ol>
+
+<a name="IANA"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.6"></a><h3>6.&nbsp;
 IANA Considerations</h3>
 
 <p>
              This document uses URNs to describe XML namespaces and XML schemas
-             conforming to a registry mechanism described in <a class='info' href='#RFC3688'>[RFC3688]<span> (</span><span class='info'>Mealling, M., &ldquo;The IETF XML Registry,&rdquo; January&nbsp;2004.</span><span>)</span></a>.
+             conforming to a registry mechanism described in <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC3688">[RFC3688]<span> (</span><span class="info">Mealling, M., “The IETF XML Registry,” January&nbsp;2004.</span><span>)</span></a>.
              One URI assignment must be completed by the IANA.
          
 </p>
@@ -680,37 +815,37 @@ IANA Considerations</h3>
 </p>
 <p>XML: See the "Formal Syntax" section of this document.
 </p>
-<a name="Security"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="Security"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <a name="rfc.section.7"></a><h3>7.&nbsp;
 Security Considerations</h3>
 
 <p>The mapping extensions described in this document do not provide any
-      security services beyond those described by <a class='info' href='#RFC5730'>EPP<span> (</span><span class='info'>Hollenbeck, S., &ldquo;Extensible Provisioning Protocol (EPP),&rdquo; August&nbsp;2009.</span><span>)</span></a> [RFC5730] and protocol layers used by EPP. The security
+      security services beyond those described by <a class="info" href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#RFC5730">EPP<span> (</span><span class="info">Hollenbeck, S., “Extensible Provisioning Protocol (EPP),” August&nbsp;2009.</span><span>)</span></a> [RFC5730] and protocol layers used by EPP. The security
       considerations described in these other specifications apply to this
       specification as well.
 </p>
-<a name="rfc.references1"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.references1"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <h3>8.&nbsp;Normative References</h3>
 <table width="99%" border="0">
-<tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
-<td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, &ldquo;<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,&rdquo; BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>
+<tbody><tr><td class="author-text" valign="top"><a name="RFC2119">[RFC2119]</a></td>
+<td class="author-text"><a href="mailto:sob@harvard.edu">Bradner, S.</a>, “<a href="http://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>,” BCP&nbsp;14, RFC&nbsp;2119, March&nbsp;1997 (<a href="http://www.rfc-editor.org/rfc/rfc2119.txt">TXT</a>, <a href="http://xml.resource.org/public/rfc/html/rfc2119.html">HTML</a>, <a href="http://xml.resource.org/public/rfc/xml/rfc2119.xml">XML</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC3688">[RFC3688]</a></td>
-<td class="author-text">Mealling, M., &ldquo;<a href="http://tools.ietf.org/html/rfc3688">The IETF XML Registry</a>,&rdquo; BCP&nbsp;81, RFC&nbsp;3688, January&nbsp;2004 (<a href="http://www.rfc-editor.org/rfc/rfc3688.txt">TXT</a>).</td></tr>
+<td class="author-text">Mealling, M., “<a href="http://tools.ietf.org/html/rfc3688">The IETF XML Registry</a>,” BCP&nbsp;81, RFC&nbsp;3688, January&nbsp;2004 (<a href="http://www.rfc-editor.org/rfc/rfc3688.txt">TXT</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC3915">[RFC3915]</a></td>
-<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc3915">Domain Registry Grace Period Mapping for the Extensible Provisioning Protocol (EPP)</a>,&rdquo; RFC&nbsp;3915, September&nbsp;2004 (<a href="http://www.rfc-editor.org/rfc/rfc3915.txt">TXT</a>).</td></tr>
+<td class="author-text">Hollenbeck, S., “<a href="http://tools.ietf.org/html/rfc3915">Domain Registry Grace Period Mapping for the Extensible Provisioning Protocol (EPP)</a>,” RFC&nbsp;3915, September&nbsp;2004 (<a href="http://www.rfc-editor.org/rfc/rfc3915.txt">TXT</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC5730">[RFC5730]</a></td>
-<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5730">Extensible Provisioning Protocol (EPP)</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5730, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5730.txt">TXT</a>).</td></tr>
+<td class="author-text">Hollenbeck, S., “<a href="http://tools.ietf.org/html/rfc5730">Extensible Provisioning Protocol (EPP)</a>,” STD&nbsp;69, RFC&nbsp;5730, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5730.txt">TXT</a>).</td></tr>
 <tr><td class="author-text" valign="top"><a name="RFC5731">[RFC5731]</a></td>
-<td class="author-text">Hollenbeck, S., &ldquo;<a href="http://tools.ietf.org/html/rfc5731">Extensible Provisioning Protocol (EPP) Domain Name Mapping</a>,&rdquo; STD&nbsp;69, RFC&nbsp;5731, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5731.txt">TXT</a>).</td></tr>
-</table>
+<td class="author-text">Hollenbeck, S., “<a href="http://tools.ietf.org/html/rfc5731">Extensible Provisioning Protocol (EPP) Domain Name Mapping</a>,” STD&nbsp;69, RFC&nbsp;5731, August&nbsp;2009 (<a href="http://www.rfc-editor.org/rfc/rfc5731.txt">TXT</a>).</td></tr>
+</tbody></table>
 
-<a name="rfc.authors"></a><br /><hr />
-<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tr><td class="TOCbug"><a href="#toc">&nbsp;TOC&nbsp;</a></td></tr></table>
+<a name="rfc.authors"></a><br><hr>
+<table summary="layout" cellpadding="0" cellspacing="2" class="TOCbug" align="right"><tbody><tr><td class="TOCbug"><a href="http://xml2rfc.ietf.org/cgi-bin/cat.cgi/draft-gould-allocation-token.html?input=d6fb7081227e899b3e01a7d48f77ad4bbcd4891c94696d1643cb81e5-1405577155#toc">&nbsp;TOC&nbsp;</a></td></tr></tbody></table>
 <h3>Authors' Addresses</h3>
 <table width="99%" border="0" cellpadding="0" cellspacing="0">
-<tr><td class="author-text">&nbsp;</td>
+<tbody><tr><td class="author-text">&nbsp;</td>
 <td class="author-text">James Gould</td></tr>
 <tr><td class="author-text">&nbsp;</td>
 <td class="author-text">VeriSign, Inc.</td></tr>
@@ -723,7 +858,7 @@ Security Considerations</h3>
 <tr><td class="author" align="right">Email:&nbsp;</td>
 <td class="author-text"><a href="mailto:jgould@verisign.com">jgould@verisign.com</a></td></tr>
 <tr><td class="author" align="right">URI:&nbsp;</td>
-<td class="author-text"><a href="http://www.verisigninc.com">http://www.verisigninc.com</a></td></tr>
+<td class="author-text"><a href="http://www.verisigninc.com/">http://www.verisigninc.com</a></td></tr>
 <tr cellpadding="3"><td>&nbsp;</td><td>&nbsp;</td></tr>
 <tr><td class="author-text">&nbsp;</td>
 <td class="author-text">Trung Tran</td></tr>
@@ -738,6 +873,7 @@ Security Considerations</h3>
 <tr><td class="author" align="right">Email:&nbsp;</td>
 <td class="author-text"><a href="mailto:Trung.Tran@neustar.biz">Trung.Tran@neustar.biz</a></td></tr>
 <tr><td class="author" align="right">URI:&nbsp;</td>
-<td class="author-text"><a href="http://www.neustar.biz">http://www.neustar.biz</a></td></tr>
-</table>
+<td class="author-text"><a href="http://www.neustar.biz/">http://www.neustar.biz</a></td></tr>
+</tbody></table>
+
 </body></html>
