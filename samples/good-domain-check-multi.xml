@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <command>
+  <check>
+   <domain:check 
+     xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+    <domain:name>example.tld</domain:name>
+    <domain:name>example2.tld</domain:name>
+   </domain:check>
+  </check>
+  <extension>
+   <allocationToken:allocationToken 
+     xmlns:allocationToken=
+      "urn:ietf:params:xml:ns:allocationToken-1.0">
+     abc123
+   </allocationToken:allocationToken>
+  </extension>
+  <clTRID>ABC-DEF-12345</clTRID>
+ </command>
+</epp>
