@@ -39,7 +39,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-gould-allocation-token-01" ipr="trust200902">
+<rfc category="std" docName="draft-gould-allocation-token-00" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN" 
@@ -95,15 +95,36 @@
       </address>
     </author>
 
+    <author fullname="Sharon Wodjenski" initials="S.W" surname="Wodjenski">
+      <organization>Neustar</organization>
 
-    <date day="10" month="February" year="2014"/>
+      <address>
+        <postal>
+          <street>21575 Ridgetop Circle</street>
+
+          <city>Sterling</city>
+
+          <region>VA</region>
+
+          <code>20166</code>
+
+          <country>US</country>
+        </postal>
+
+        <email>Sharon.Wodjenski@neustar.biz</email>
+
+        <uri>http://www.neustar.biz</uri>
+      </address>
+    </author>
+
+    <date day="13" month="August" year="2014"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
       extension for including an allocation token or code for allocating 
       an object like a domain name to the client.  The allocation token 
       MAY be transferred out-of-band to a client to give them authorization 
-      to allocation an object using one of the EPP transform commands 
+      to allocate an object using one of the EPP transform commands 
       including create, update, and transfer.</t>
     </abstract>
         
@@ -120,7 +141,7 @@
       server to authorize a client that passes a matching allocation token 
       with one of the supported EPP transform commands.  It is up to server 
       policy which EPP transform commands and which objects support the 
-      allocation token.  The allocation token MAY be returned in an 
+      allocation token.  The allocation token MAY be returned to an 
       authorized client for passing out-of-band to a client that 
       uses it with an EPP transform command.</t>
 
@@ -664,11 +685,6 @@ END]]></artwork>
         <t>Initial version.</t>
       </list></t>
     </section>
-    <section title="Version 01" anchor="version-01">
-      <t><list style="numbers">
-        <t>Updates related to EPP check command.</t>
-      </list></t>
-    </section>	
    </section>
     
     <section anchor="IANA" title="IANA Considerations">

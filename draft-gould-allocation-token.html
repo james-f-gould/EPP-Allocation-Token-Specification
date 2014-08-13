@@ -393,7 +393,6 @@
 <link href="#rfc.section.4.1" rel="Chapter" title="4.1 Allocation Token Extension Schema"/>
 <link href="#rfc.section.5" rel="Chapter" title="5 Change History"/>
 <link href="#rfc.section.5.1" rel="Chapter" title="5.1 Version 00"/>
-<link href="#rfc.section.5.2" rel="Chapter" title="5.2 Version 01"/>
 <link href="#rfc.section.6" rel="Chapter" title="6 IANA Considerations"/>
 <link href="#rfc.section.7" rel="Chapter" title="7 Security Considerations"/>
 <link href="#rfc.references" rel="Chapter" title="8 Normative References"/>
@@ -403,11 +402,11 @@
   <meta name="generator" content="xml2rfc version 2.4.8 - http://tools.ietf.org/tools/xml2rfc" />
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
-  <meta name="dct.creator" content="Gould, J. and T. Tran" />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-gould-allocation-token-01" />
-  <meta name="dct.issued" scheme="ISO8601" content="2014-2-10" />
-  <meta name="dct.abstract" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocation an object using one of the EPP transform commands including create, update, and transfer." />
-  <meta name="description" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocation an object using one of the EPP transform commands including create, update, and transfer." />
+  <meta name="dct.creator" content="Gould, J., Tran, T., and S. Wodjenski" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-gould-allocation-token-00" />
+  <meta name="dct.issued" scheme="ISO8601" content="2014-8-13" />
+  <meta name="dct.abstract" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocate an object using one of the EPP transform commands including create, update, and transfer." />
+  <meta name="description" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocate an object using one of the EPP transform commands including create, update, and transfer." />
 
 </head>
 
@@ -429,12 +428,16 @@
   <td class="right">T. Tran</td>
 </tr>
 <tr>
-  <td class="left">Expires: August 14, 2014</td>
+  <td class="left">Expires: February 14, 2015</td>
+  <td class="right">S. Wodjenski</td>
+</tr>
+<tr>
+  <td class="left"></td>
   <td class="right">Neustar</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">February 10, 2014</td>
+  <td class="right">August 13, 2014</td>
 </tr>
 
     	
@@ -442,19 +445,19 @@
   </table>
 
   <p class="title">Allocation Token Extension for the Extensible Provisioning Protocol (EPP)<br />
-  <span class="filename">draft-gould-allocation-token-01</span></p>
+  <span class="filename">draft-gould-allocation-token-00</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
 </h1>
-<p>This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocation an object using one of the EPP transform commands including create, update, and transfer.</p>
+<p>This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocate an object using one of the EPP transform commands including create, update, and transfer.</p>
 <h1 id="rfc.status">
   <a href="#rfc.status">Status of This Memo</a>
 </h1>
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on August 14, 2014.</p>
+<p>This Internet-Draft will expire on February 14, 2015.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -485,7 +488,6 @@
 <li>4.1.   <a href="#rfc.section.4.1">Allocation Token Extension Schema</a></li>
 <li>5.   <a href="#rfc.section.5">Change History</a></li>
 <li>5.1.   <a href="#rfc.section.5.1">Version 00</a></li>
-<li>5.2.   <a href="#rfc.section.5.2">Version 01</a></li>
 <li>6.   <a href="#rfc.section.6">IANA Considerations</a></li>
 <li>7.   <a href="#rfc.section.7">Security Considerations</a></li>
 <li>8.   <a href="#rfc.references">Normative References</a></li>
@@ -495,7 +497,7 @@
   </ul>
 
   <h1 id="rfc.section.1"><a href="#rfc.section.1">1.</a> Introduction</h1>
-<p id="rfc.section.1.p.1">This document describes an extension mapping for version 1.0 of the <a href="#RFC5730">Extensible Provisioning Protocol (EPP)</a> <cite title="NONE">[RFC5730]</cite>.  This mapping, an extension to EPP object mappings like the <a href="#RFC5731">EPP domain name mapping</a> <cite title="NONE">[RFC5731]</cite>, for passing an allocation token one of the EPP transform commands including create, update, and transfer.  The allocation token is known to the server to authorize a client that passes a matching allocation token with one of the supported EPP transform commands.  It is up to server policy which EPP transform commands and which objects support the allocation token.  The allocation token MAY be returned in an authorized client for passing out-of-band to a client that uses it with an EPP transform command.</p>
+<p id="rfc.section.1.p.1">This document describes an extension mapping for version 1.0 of the <a href="#RFC5730">Extensible Provisioning Protocol (EPP)</a> <cite title="NONE">[RFC5730]</cite>.  This mapping, an extension to EPP object mappings like the <a href="#RFC5731">EPP domain name mapping</a> <cite title="NONE">[RFC5731]</cite>, for passing an allocation token one of the EPP transform commands including create, update, and transfer.  The allocation token is known to the server to authorize a client that passes a matching allocation token with one of the supported EPP transform commands.  It is up to server policy which EPP transform commands and which objects support the allocation token.  The allocation token MAY be returned to an authorized client for passing out-of-band to a client that uses it with an EPP transform command.</p>
 <h1 id="rfc.section.1.1"><a href="#rfc.section.1.1">1.1.</a> Conventions Used in This Document</h1>
 <p id="rfc.section.1.1.p.1">The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in <a href="#RFC2119">RFC 2119</a> <cite title="NONE">[RFC2119]</cite>.</p>
 <p id="rfc.section.1.1.p.2">XML is case sensitive. Unless stated otherwise, XML specifications and examples provided in this document MUST be interpreted in the character case presented in order to develop a conforming implementation.</p>
@@ -817,12 +819,6 @@ END</pre>
 <ol>
   <li>Initial version.</li>
 </ol>
-<h1 id="rfc.section.5.2"><a href="#rfc.section.5.2">5.2.</a> <a href="#version-01" id="version-01">Version 01</a></h1>
-<p/>
-
-<ol>
-  <li>Updates related to EPP check command.</li>
-</ol>
 <h1 id="rfc.section.6"><a href="#rfc.section.6">6.</a> <a href="#IANA" id="IANA">IANA Considerations</a></h1>
 <p id="rfc.section.6.p.1">This document uses URNs to describe XML namespaces and XML schemas conforming to a registry mechanism described in <a href="#RFC3688">[RFC3688]</a>.  One URI assignment must be completed by the IANA.  </p>
 <p id="rfc.section.6.p.2">Registration request for the allocationToken namespace:</p>
@@ -914,6 +910,30 @@ END</pre>
 	  <span class="country-name vcardline">US</span>
 	</span>
 	<span class="vcardline">EMail: <a href="mailto:Trung.Tran@neustar.biz">Trung.Tran@neustar.biz</a></span>
+
+<span class="vcardline">URI: <a href="http://www.neustar.biz">http://www.neustar.biz</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Sharon Wodjenski</span> 
+	  <span class="n hidden">
+		<span class="family-name">Wodjenski</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Neustar</span>
+	<span class="adr">
+	  <span class="vcardline">21575 Ridgetop Circle</span>
+
+	  <span class="vcardline">
+		<span class="locality">Sterling</span>,  
+		<span class="region">VA</span> 
+		<span class="code">20166</span>
+	  </span>
+	  <span class="country-name vcardline">US</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:Sharon.Wodjenski@neustar.biz">Sharon.Wodjenski@neustar.biz</a></span>
 
 <span class="vcardline">URI: <a href="http://www.neustar.biz">http://www.neustar.biz</a></span>
 
