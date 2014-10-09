@@ -190,7 +190,7 @@ Internet-Draft               allocationToken                October 2014
    This extension allow clients to check the availability of an object
    with an allocation token, as described in Section 2.1.  Clients can
    check if an object can be created using the allocation token.  The
-   allocaton token is applied to all object names included in the EPP
+   allocation token is applied to all object names included in the EPP
    <check> command.
 
    Example <check> command for the example.tld domain name using the
@@ -377,14 +377,14 @@ Internet-Draft               allocationToken                October 2014
    command of an object mapping like [RFC5731].
 
    The EPP <info> command allows a client to request information on an
-   existing object.  Authorized clients MAY retrieve the Allocation
-   Token (Section 2.1) along with the other object information using the
+   existing object.  Authorized clients MAY retrieve the allocation
+   token (Section 2.1) along with the other object information using the
    <allocationToken:info> element that identifies the extension
    namespace.  The <allocationToken:info> element is an empty element
    that serves as a marker to the server to return the
    <allocationToken:allocationToken> element, defined in Section 2.1, in
    the info response.  If the client is not authorized to receive the
-   Allocation Token (Section 2.1), the server MUST return an EPP error
+   allocation token (Section 2.1), the server MUST return an EPP error
    result code of 2201.  If the client is authorized to receive the
 
 
@@ -394,7 +394,7 @@ Gould, et al.            Expires April 12, 2015                 [Page 7]
 Internet-Draft               allocationToken                October 2014
 
 
-   Allocation Token (Section 2.1), but there is no Allocation Token
+   allocation token (Section 2.1), but there is no allocation token
    (Section 2.1) associated with the object, the server MUST return an
    EPP error result code of 2303 object referencing the
    <allocationToken:info> element.
@@ -525,8 +525,8 @@ Internet-Draft               allocationToken                October 2014
    contain a child <allocationToken:allocationToken> element, as defined
    in Section 2.1, that identifies the extension namespace for the
    client to be authorized to create and allocate the object.  If the
-   Allocation Token (Section 2.1) does not match the object's Allocation
-   Token (Section 2.1), the server MUST return an EPP error result code
+   allocation token (Section 2.1) does not match the object's allocation
+   token (Section 2.1), the server MUST return an EPP error result code
    of 2201.:
 
 
@@ -624,8 +624,8 @@ Internet-Draft               allocationToken                October 2014
    like [RFC5731], the command MUST contain a child
    <allocationToken:allocationToken> element, as defined in Section 2.1,
    that identifies the extension namespace for the client to be
-   authorized to transfer and allocate the object.  If the Allocation
-   Token (Section 2.1) does not match the object's Allocation Token
+   authorized to transfer and allocate the object.  If the allocation
+   token (Section 2.1) does not match the object's allocation token
    (Section 2.1), the server MUST return an EPP error result code of
    2201.:
 
@@ -679,8 +679,8 @@ Internet-Draft               allocationToken                October 2014
    described in an object mapping like [RFC5731], the command MUST
    contain a child <allocationToken:allocationToken> element, as defined
    in Section 2.1, that identifies the extension namespace for the
-   client to be authorized to allocate the object.  If the Allocation
-   Token (Section 2.1) does not match the object's Allocation Token
+   client to be authorized to allocate the object.  If the allocation
+   token (Section 2.1) does not match the object's allocation token
    (Section 2.1), the server MUST return an EPP error result code of
    2201.:
 
