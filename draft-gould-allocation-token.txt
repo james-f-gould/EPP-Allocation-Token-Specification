@@ -5,9 +5,9 @@
 Network Working Group                                           J. Gould
 Internet-Draft                                            VeriSign, Inc.
 Intended status: Standards Track                                 T. Tran
-Expires: April 11, 2015                                     S. Wodjenski
+Expires: April 12, 2015                                     S. Wodjenski
                                                                  Neustar
-                                                         October 8, 2014
+                                                         October 9, 2014
 
 
   Allocation Token Extension for the Extensible Provisioning Protocol
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on April 11, 2015.
+   This Internet-Draft will expire on April 12, 2015.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 1]
+Gould, et al.            Expires April 12, 2015                 [Page 1]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 2]
+Gould, et al.            Expires April 12, 2015                 [Page 2]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -165,7 +165,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 3]
+Gould, et al.            Expires April 12, 2015                 [Page 3]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -221,7 +221,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 4]
+Gould, et al.            Expires April 12, 2015                 [Page 4]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -277,7 +277,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 5]
+Gould, et al.            Expires April 12, 2015                 [Page 5]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -333,7 +333,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 6]
+Gould, et al.            Expires April 12, 2015                 [Page 6]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -377,24 +377,25 @@ Internet-Draft               allocationToken                October 2014
    command of an object mapping like [RFC5731].
 
    The EPP <info> command allows a client to request information on an
-   existing object.  Authorized clients MAY retrieve the Section 2.1
-   along with the other object information using the
+   existing object.  Authorized clients MAY retrieve the Allocation
+   Token (Section 2.1) along with the other object information using the
    <allocationToken:info> element that identifies the extension
    namespace.  The <allocationToken:info> element is an empty element
    that serves as a marker to the server to return the
-   <allocationToken:allocationToken> element, defined in Section 2.1 in
+   <allocationToken:allocationToken> element, defined in Section 2.1, in
    the info response.  If the client is not authorized to receive the
-   Section 2.1, the server MUST return an EPP error result code of 2201.
-   If the client is authorized to receive the Section 2.1, but there is
+   Allocation Token (Section 2.1), the server MUST return an EPP error
+   result code of 2201.  If the client is authorized to receive the
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 7]
+Gould, et al.            Expires April 12, 2015                 [Page 7]
 
 Internet-Draft               allocationToken                October 2014
 
 
-   no Section 2.1 associated with the object, the server MUST return an
+   Allocation Token (Section 2.1), but there is no Allocation Token
+   (Section 2.1) associated with the object, the server MUST return an
    EPP error result code of 2303 object referencing the
    <allocationToken:info> element.
 
@@ -444,8 +445,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-
-Gould, et al.            Expires April 11, 2015                 [Page 8]
+Gould, et al.            Expires April 12, 2015                 [Page 8]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -501,7 +501,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                 [Page 9]
+Gould, et al.            Expires April 12, 2015                 [Page 9]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -525,8 +525,9 @@ Internet-Draft               allocationToken                October 2014
    contain a child <allocationToken:allocationToken> element, as defined
    in Section 2.1, that identifies the extension namespace for the
    client to be authorized to create and allocate the object.  If the
-   Section 2.1 does not match the object's Section 2.1, the server MUST
-   return an EPP error result code of 2201.:
+   Allocation Token (Section 2.1) does not match the object's Allocation
+   Token (Section 2.1), the server MUST return an EPP error result code
+   of 2201.:
 
 
 
@@ -556,8 +557,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-
-Gould, et al.            Expires April 11, 2015                [Page 10]
+Gould, et al.            Expires April 12, 2015                [Page 10]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -613,7 +613,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                [Page 11]
+Gould, et al.            Expires April 12, 2015                [Page 11]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -624,9 +624,10 @@ Internet-Draft               allocationToken                October 2014
    like [RFC5731], the command MUST contain a child
    <allocationToken:allocationToken> element, as defined in Section 2.1,
    that identifies the extension namespace for the client to be
-   authorized to transfer and allocate the object.  If the Section 2.1
-   does not match the object's Section 2.1, the server MUST return an
-   EPP error result code of 2201.:
+   authorized to transfer and allocate the object.  If the Allocation
+   Token (Section 2.1) does not match the object's Allocation Token
+   (Section 2.1), the server MUST return an EPP error result code of
+   2201.:
 
    Example <transfer> request command to allocate the domain object with
    the allocation token:
@@ -668,8 +669,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-
-Gould, et al.            Expires April 11, 2015                [Page 12]
+Gould, et al.            Expires April 12, 2015                [Page 12]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -679,9 +679,10 @@ Internet-Draft               allocationToken                October 2014
    described in an object mapping like [RFC5731], the command MUST
    contain a child <allocationToken:allocationToken> element, as defined
    in Section 2.1, that identifies the extension namespace for the
-   client to be authorized to allocate the object.  If the Section 2.1
-   does not match the object's Section 2.1, the server MUST return an
-   EPP error result code of 2201.:
+   client to be authorized to allocate the object.  If the Allocation
+   Token (Section 2.1) does not match the object's Allocation Token
+   (Section 2.1), the server MUST return an EPP error result code of
+   2201.:
 
    Example use an extension of an empty <update> command to release a
    domain object with an allocation token:
@@ -724,8 +725,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-
-Gould, et al.            Expires April 11, 2015                [Page 13]
+Gould, et al.            Expires April 12, 2015                [Page 13]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -781,7 +781,7 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                [Page 14]
+Gould, et al.            Expires April 12, 2015                [Page 14]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -837,7 +837,7 @@ Authors' Addresses
 
 
 
-Gould, et al.            Expires April 11, 2015                [Page 15]
+Gould, et al.            Expires April 12, 2015                [Page 15]
 
 Internet-Draft               allocationToken                October 2014
 
@@ -893,4 +893,4 @@ Internet-Draft               allocationToken                October 2014
 
 
 
-Gould, et al.            Expires April 11, 2015                [Page 16]
+Gould, et al.            Expires April 12, 2015                [Page 16]

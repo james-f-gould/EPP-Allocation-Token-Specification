@@ -117,7 +117,7 @@
       </address>
     </author>
 
-    <date day="8" month="October" year="2014"/>
+    <date day="9" month="October" year="2014"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -355,15 +355,15 @@ S:</epp>]]></artwork>
         &lt;info&gt; command of an object mapping like <xref target="RFC5731"/>.</t>
 
        <t>The EPP &lt;info&gt; command allows a client to request information on an 
-       existing object.  Authorized clients MAY retrieve the <xref target="allocationToken"/> along 
+       existing object.  Authorized clients MAY retrieve the <xref target="allocationToken">Allocation Token</xref> along 
        with the other object information using the &lt;allocationToken:info&gt; element 
        that identifies the extension namespace.  The &lt;allocationToken:info&gt; 
        element is an empty element that serves as a marker to the server to 
        return the &lt;allocationToken:allocationToken&gt; element, defined in 
-       <xref target="allocationToken"/> in the info response.  If the client is not 
-       authorized to receive the <xref target="allocationToken"/>, the server MUST 
+       <xref target="allocationToken"/>, in the info response.  If the client is not 
+       authorized to receive the <xref target="allocationToken">Allocation Token</xref>, the server MUST 
        return an EPP error result code of 2201.  If the client is authorized to 
-       receive the <xref target="allocationToken"/>, but there is no <xref target="allocationToken"/> 
+       receive the <xref target="allocationToken">Allocation Token</xref>, but there is no <xref target="allocationToken">Allocation Token</xref> 
        associated with the object, the server MUST return an EPP error result code of 
        2303 object referencing the &lt;allocationToken:info&gt; element.</t> 
 
@@ -468,8 +468,8 @@ S:</epp>]]></artwork>
        <t>The EPP &lt;create&gt; command provides a transform operation that allows a client to create an object.  
        In addition to the EPP command elements described in an object mapping like <xref target="RFC5731"/>, the command MUST contain a 
        child &lt;allocationToken:allocationToken&gt; element, as defined in <xref target="allocationToken"/>, that identifies the extension namespace 
-       for the client to be authorized to create and allocate the object.  If the <xref target="allocationToken"/> does not match 
-       the object's <xref target="allocationToken"/>, the server MUST 
+       for the client to be authorized to create and allocate the object.  If the <xref target="allocationToken">Allocation Token</xref> does not match 
+       the object's <xref target="allocationToken">Allocation Token</xref>, the server MUST 
        return an EPP error result code of 2201.:</t>
                      
        <figure>
@@ -534,8 +534,8 @@ C:</epp>]]></artwork>
        transfer of an object.  
        In addition to the EPP command elements described in an object mapping like <xref target="RFC5731"/>, the command MUST contain a 
        child &lt;allocationToken:allocationToken&gt; element, as defined in <xref target="allocationToken"/>, that identifies the extension namespace 
-       for the client to be authorized to transfer and allocate the object.  If the <xref target="allocationToken"/> does not match 
-       the object's <xref target="allocationToken"/>, the server MUST 
+       for the client to be authorized to transfer and allocate the object.  If the <xref target="allocationToken">Allocation Token</xref> does not match 
+       the object's <xref target="allocationToken">Allocation Token</xref>, the server MUST 
        return an EPP error result code of 2201.:</t>
                      
        <figure>
@@ -584,8 +584,8 @@ C:</epp>]]></artwork>
        <t>An extension of an empty EPP &lt;update&gt; command defines a new verb that transforms an object.    
        In addition to the EPP command elements described in an object mapping like <xref target="RFC5731"/>, the command MUST contain a 
        child &lt;allocationToken:allocationToken&gt; element, as defined in <xref target="allocationToken"/>, that identifies the extension namespace 
-       for the client to be authorized to allocate the object.  If the <xref target="allocationToken"/> does not match 
-       the object's <xref target="allocationToken"/>, the server MUST 
+       for the client to be authorized to allocate the object.  If the <xref target="allocationToken">Allocation Token</xref> does not match 
+       the object's <xref target="allocationToken">Allocation Token</xref>, the server MUST 
        return an EPP error result code of 2201.:</t>
                      
        <figure>

@@ -404,7 +404,7 @@
 
   <meta name="dct.creator" content="Gould, J., Tran, T., and S. Wodjenski" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-gould-allocation-token-00" />
-  <meta name="dct.issued" scheme="ISO8601" content="2014-10-8" />
+  <meta name="dct.issued" scheme="ISO8601" content="2014-10-9" />
   <meta name="dct.abstract" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocate an object using one of the EPP transform commands including create, update, and transfer." />
   <meta name="description" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an allocation token or code for allocating an object like a domain name to the client.  The allocation token MAY be transferred out-of-band to a client to give them authorization to allocate an object using one of the EPP transform commands including create, update, and transfer." />
 
@@ -428,7 +428,7 @@
   <td class="right">T. Tran</td>
 </tr>
 <tr>
-  <td class="left">Expires: April 11, 2015</td>
+  <td class="left">Expires: April 12, 2015</td>
   <td class="right">S. Wodjenski</td>
 </tr>
 <tr>
@@ -437,7 +437,7 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">October 8, 2014</td>
+  <td class="right">October 9, 2014</td>
 </tr>
 
     	
@@ -457,7 +457,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on April 11, 2015.</p>
+<p>This Internet-Draft will expire on April 12, 2015.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -619,7 +619,7 @@ S:&lt;/epp&gt;</pre>
 <p id="rfc.section.3.1.1.p.4">This extension does not add any elements to the EPP &lt;check&gt; response described in the <a href="#RFC5730">[RFC5730]</a>.</p>
 <h1 id="rfc.section.3.1.2"><a href="#rfc.section.3.1.2">3.1.2.</a> <a href="#infoCommand" id="infoCommand">EPP &lt;info&gt; Command</a></h1>
 <p id="rfc.section.3.1.2.p.1">This extension defines additional elements to extend the EPP &lt;info&gt; command of an object mapping like <a href="#RFC5731">[RFC5731]</a>.</p>
-<p id="rfc.section.3.1.2.p.2">The EPP &lt;info&gt; command allows a client to request information on an existing object.  Authorized clients MAY retrieve the <a href="#allocationToken">Section 2.1</a> along with the other object information using the &lt;allocationToken:info&gt; element that identifies the extension namespace.  The &lt;allocationToken:info&gt; element is an empty element that serves as a marker to the server to return the &lt;allocationToken:allocationToken&gt; element, defined in <a href="#allocationToken">Section 2.1</a> in the info response.  If the client is not authorized to receive the <a href="#allocationToken">Section 2.1</a>, the server MUST return an EPP error result code of 2201.  If the client is authorized to receive the <a href="#allocationToken">Section 2.1</a>, but there is no <a href="#allocationToken">Section 2.1</a> associated with the object, the server MUST return an EPP error result code of 2303 object referencing the &lt;allocationToken:info&gt; element.</p>
+<p id="rfc.section.3.1.2.p.2">The EPP &lt;info&gt; command allows a client to request information on an existing object.  Authorized clients MAY retrieve the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> along with the other object information using the &lt;allocationToken:info&gt; element that identifies the extension namespace.  The &lt;allocationToken:info&gt; element is an empty element that serves as a marker to the server to return the &lt;allocationToken:allocationToken&gt; element, defined in <a href="#allocationToken">Section 2.1</a>, in the info response.  If the client is not authorized to receive the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite>, the server MUST return an EPP error result code of 2201.  If the client is authorized to receive the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite>, but there is no <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> associated with the object, the server MUST return an EPP error result code of 2303 object referencing the &lt;allocationToken:info&gt; element.</p>
 <p>Example &lt;info&gt; command with the allocationToken:info extension for the example.tld domain name:</p>
 <pre>
 C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
@@ -686,7 +686,7 @@ S:&lt;/epp&gt;</pre>
 <p id="rfc.section.3.2.p.1">EPP provides five commands to transform objects: &lt;create&gt; to create an instance of an object, &lt;delete&gt; to delete an instance of an object, &lt;renew&gt; to extend the validity period of an object, &lt;transfer&gt; to manage object sponsorship changes, and &lt;update&gt; to change information associated with an object.</p>
 <h1 id="rfc.section.3.2.1"><a href="#rfc.section.3.2.1">3.2.1.</a> <a href="#createCommand" id="createCommand">EPP &lt;create&gt; Command</a></h1>
 <p id="rfc.section.3.2.1.p.1">This extension defines additional elements to extend the EPP &lt;create&gt; command of an object mapping like <a href="#RFC5731">[RFC5731]</a>.</p>
-<p id="rfc.section.3.2.1.p.2">The EPP &lt;create&gt; command provides a transform operation that allows a client to create an object.  In addition to the EPP command elements described in an object mapping like <a href="#RFC5731">[RFC5731]</a>, the command MUST contain a child &lt;allocationToken:allocationToken&gt; element, as defined in <a href="#allocationToken">Section 2.1</a>, that identifies the extension namespace for the client to be authorized to create and allocate the object.  If the <a href="#allocationToken">Section 2.1</a> does not match the object's <a href="#allocationToken">Section 2.1</a>, the server MUST return an EPP error result code of 2201.:</p>
+<p id="rfc.section.3.2.1.p.2">The EPP &lt;create&gt; command provides a transform operation that allows a client to create an object.  In addition to the EPP command elements described in an object mapping like <a href="#RFC5731">[RFC5731]</a>, the command MUST contain a child &lt;allocationToken:allocationToken&gt; element, as defined in <a href="#allocationToken">Section 2.1</a>, that identifies the extension namespace for the client to be authorized to create and allocate the object.  If the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> does not match the object's <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite>, the server MUST return an EPP error result code of 2201.:</p>
 <p>Example &lt;create&gt; command to create a domain object with an allocation token:</p>
 <pre>
 C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
@@ -721,7 +721,7 @@ C:&lt;/epp&gt;</pre>
 <p id="rfc.section.3.2.3.p.1">This extension does not add any elements to the EPP &lt;renew&gt; command or &lt;renew&gt; response described in the <a href="#RFC5730">[RFC5730]</a>.</p>
 <h1 id="rfc.section.3.2.4"><a href="#rfc.section.3.2.4">3.2.4.</a> <a href="#transferCommand" id="transferCommand">EPP &lt;transfer&gt; Command</a></h1>
 <p id="rfc.section.3.2.4.p.1">This extension defines additional elements to extend the EPP &lt;transfer&gt; request command of an object mapping like <a href="#RFC5731">[RFC5731]</a>.</p>
-<p id="rfc.section.3.2.4.p.2">The EPP &lt;transfer&gt; request command provides a transform operation that allows a client to request the transfer of an object.  In addition to the EPP command elements described in an object mapping like <a href="#RFC5731">[RFC5731]</a>, the command MUST contain a child &lt;allocationToken:allocationToken&gt; element, as defined in <a href="#allocationToken">Section 2.1</a>, that identifies the extension namespace for the client to be authorized to transfer and allocate the object.  If the <a href="#allocationToken">Section 2.1</a> does not match the object's <a href="#allocationToken">Section 2.1</a>, the server MUST return an EPP error result code of 2201.:</p>
+<p id="rfc.section.3.2.4.p.2">The EPP &lt;transfer&gt; request command provides a transform operation that allows a client to request the transfer of an object.  In addition to the EPP command elements described in an object mapping like <a href="#RFC5731">[RFC5731]</a>, the command MUST contain a child &lt;allocationToken:allocationToken&gt; element, as defined in <a href="#allocationToken">Section 2.1</a>, that identifies the extension namespace for the client to be authorized to transfer and allocate the object.  If the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> does not match the object's <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite>, the server MUST return an EPP error result code of 2201.:</p>
 <p>Example &lt;transfer&gt; request command to allocate the domain object with the allocation token:</p>
 <pre>
 C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
@@ -750,7 +750,7 @@ C:&lt;/epp&gt;</pre>
 <p id="rfc.section.3.2.4.p.3">This extension does not add any elements to the EPP &lt;transfer&gt; response described in the <a href="#RFC5730">[RFC5730]</a>.</p>
 <h1 id="rfc.section.3.2.5"><a href="#rfc.section.3.2.5">3.2.5.</a> <a href="#updateCommand" id="updateCommand">EPP &lt;update&gt; Command</a></h1>
 <p id="rfc.section.3.2.5.p.1">This extension defines additional elements to extend an extension of an empty EPP &lt;update&gt; command of an object mapping like <a href="#RFC5731">[RFC5731]</a>.  An example of an extension of an empty EPP &lt;update&gt; command is the definition of the restore command within <a href="#RFC3915">[RFC3915]</a>.</p>
-<p id="rfc.section.3.2.5.p.2">An extension of an empty EPP &lt;update&gt; command defines a new verb that transforms an object.  In addition to the EPP command elements described in an object mapping like <a href="#RFC5731">[RFC5731]</a>, the command MUST contain a child &lt;allocationToken:allocationToken&gt; element, as defined in <a href="#allocationToken">Section 2.1</a>, that identifies the extension namespace for the client to be authorized to allocate the object.  If the <a href="#allocationToken">Section 2.1</a> does not match the object's <a href="#allocationToken">Section 2.1</a>, the server MUST return an EPP error result code of 2201.:</p>
+<p id="rfc.section.3.2.5.p.2">An extension of an empty EPP &lt;update&gt; command defines a new verb that transforms an object.  In addition to the EPP command elements described in an object mapping like <a href="#RFC5731">[RFC5731]</a>, the command MUST contain a child &lt;allocationToken:allocationToken&gt; element, as defined in <a href="#allocationToken">Section 2.1</a>, that identifies the extension namespace for the client to be authorized to allocate the object.  If the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> does not match the object's <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite>, the server MUST return an EPP error result code of 2201.:</p>
 <p>Example use an extension of an empty &lt;update&gt; command to release a domain object with an allocation token:</p>
 <pre>
 C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
