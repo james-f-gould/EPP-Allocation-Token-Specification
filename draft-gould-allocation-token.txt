@@ -5,14 +5,14 @@
 Network Working Group                                           J. Gould
 Internet-Draft                                            VeriSign, Inc.
 Intended status: Standards Track                                 T. Tran
-Expires: September 3, 2015                                  S. Wodjenski
+Expires: May 26, 2016                                       S. Wodjenski
                                                                  Neustar
-                                                           March 2, 2015
+                                                       November 23, 2015
 
 
   Allocation Token Extension for the Extensible Provisioning Protocol
                                  (EPP)
-                    draft-gould-allocation-token-01
+                    draft-gould-allocation-token-03
 
 Abstract
 
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on September 3, 2015.
+   This Internet-Draft will expire on May 26, 2016.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 1]
+Gould, et al.             Expires May 26, 2016                  [Page 1]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    to this document.  Code Components extracted from this document must
@@ -89,6 +89,8 @@ Table of Contents
    7.  Normative References  . . . . . . . . . . . . . . . . . . . .  15
    Appendix A.  Change History . . . . . . . . . . . . . . . . . . .  16
      A.1.  Change from 00 to 01  . . . . . . . . . . . . . . . . . .  16
+     A.2.  Change from 01 to 02  . . . . . . . . . . . . . . . . . .  16
+     A.3.  Change from 02 to 03  . . . . . . . . . . . . . . . . . .  16
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  16
 
 1.  Introduction
@@ -107,11 +109,9 @@ Table of Contents
 
 
 
-
-
-Gould, et al.           Expires September 3, 2015               [Page 2]
+Gould, et al.             Expires May 26, 2016                  [Page 2]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
 1.1.  Conventions Used in This Document
@@ -165,9 +165,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 3]
+Gould, et al.             Expires May 26, 2016                  [Page 3]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
 3.  EPP Command Mapping
@@ -221,9 +221,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 4]
+Gould, et al.             Expires May 26, 2016                  [Page 4]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    If the query was successful, the server replies with an <check>
@@ -277,9 +277,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 5]
+Gould, et al.             Expires May 26, 2016                  [Page 5]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    Example <check> command with the <allocationToken:allocationToken>
@@ -333,9 +333,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 6]
+Gould, et al.             Expires May 26, 2016                  [Page 6]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    Example <check> domain response for multiple domain names in the
@@ -389,9 +389,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 7]
+Gould, et al.             Expires May 26, 2016                  [Page 7]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    allocation token (Section 2.1), but there is no allocation token
@@ -445,9 +445,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 8]
+Gould, et al.             Expires May 26, 2016                  [Page 8]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    Example <info> domain response using the
@@ -501,9 +501,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015               [Page 9]
+Gould, et al.             Expires May 26, 2016                  [Page 9]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
 3.2.  EPP Transform Commands
@@ -557,9 +557,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 10]
+Gould, et al.             Expires May 26, 2016                 [Page 10]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    Example <create> command to create a domain object with an allocation
@@ -613,9 +613,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 11]
+Gould, et al.             Expires May 26, 2016                 [Page 11]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    The EPP <transfer> request command provides a transform operation
@@ -669,9 +669,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 12]
+Gould, et al.             Expires May 26, 2016                 [Page 12]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    An extension of an empty EPP <update> command defines a new verb that
@@ -725,9 +725,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 13]
+Gould, et al.             Expires May 26, 2016                 [Page 13]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
 4.1.  Allocation Token Extension Schema
@@ -781,9 +781,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 14]
+Gould, et al.             Expires May 26, 2016                 [Page 14]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    XML: See the "Formal Syntax" section of this document.
@@ -837,9 +837,9 @@ Internet-Draft               allocationToken                  March 2015
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 15]
+Gould, et al.             Expires May 26, 2016                 [Page 15]
 
-Internet-Draft               allocationToken                  March 2015
+Internet-Draft               allocationToken               November 2015
 
 
    [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
@@ -855,6 +855,14 @@ A.1.  Change from 00 to 01
    1.  Amended XML Namespace section of IANA Considerations, added EPP
        Extension Registry section.
    2.  Moved Change History to the back section as an Appendix.
+
+A.2.  Change from 01 to 02
+
+   1.  Ping update.
+
+A.3.  Change from 02 to 03
+
+   1.  Ping update.
 
 Authors' Addresses
 
@@ -878,6 +886,18 @@ Authors' Addresses
    URI:   http://www.neustar.biz
 
 
+
+
+
+
+
+
+
+Gould, et al.             Expires May 26, 2016                 [Page 16]
+
+Internet-Draft               allocationToken               November 2015
+
+
    Sharon Wodjenski
    Neustar
    21575 Ridgetop Circle
@@ -893,4 +913,40 @@ Authors' Addresses
 
 
 
-Gould, et al.           Expires September 3, 2015              [Page 16]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gould, et al.             Expires May 26, 2016                 [Page 17]
