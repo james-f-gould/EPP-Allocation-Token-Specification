@@ -40,7 +40,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-gould-allocation-token-03" ipr="trust200902">
+<rfc category="std" docName="draft-gould-allocation-token-04" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN" 
@@ -74,28 +74,6 @@
       </address>
     </author>
 
-    <author fullname="Trung Tran" initials="T.T" surname="Tran">
-      <organization>Neustar</organization>
-
-      <address>
-        <postal>
-          <street>21575 Ridgetop Circle</street>
-
-          <city>Sterling</city>
-
-          <region>VA</region>
-
-          <code>20166</code>
-
-          <country>US</country>
-        </postal>
-
-        <email>Trung.Tran@neustar.biz</email>
-
-        <uri>http://www.neustar.biz</uri>
-      </address>
-    </author>
-
     <author fullname="Sharon Wodjenski" initials="S.W" surname="Wodjenski">
       <organization>Neustar</organization>
 
@@ -118,7 +96,7 @@
       </address>
     </author>
 
-    <date day="23" month="November" year="2015"/>
+    <date day="23" month="May" year="2016"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -750,6 +728,13 @@ END]]></artwork>
       specification as well.</t>
     </section>
 
+    <section anchor="Acknowledgements" title="Acknowledgements">
+    
+      <t>The authors wish to acknowledge the original concept for this draft and the 
+      efforts in the initial versions of this draft by Trung Tran.</t> 
+      
+    </section>
+
   </middle>
 
   <!--  *****BACK MATTER ***** -->
@@ -799,6 +784,11 @@ END]]></artwork>
     <section title="Change from 02 to 03 " anchor="version-02-to-03">
       <t><list style="numbers">
         <t>Ping update.</t>
+      </list></t>
+    </section>
+    <section title="Change from 03 to 04" anchor="change-03-to-04">
+      <t><list style="numbers">
+        <t>Updated the authors for the draft.</t>
       </list></t>
     </section>
    </section>
