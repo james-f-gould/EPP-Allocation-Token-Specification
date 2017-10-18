@@ -753,7 +753,7 @@ END]]></artwork>
         <t>URL: https://www.verisign.com/en_US/channel-resources/domain-registry-products/epp-sdks</t>
       </section>
       <section title="Neustar EPP SDK">
-        <t>Organization: Neustar Inc.</t>
+        <t>Organisation: Neustar Inc.</t>
         <t>Name: Neustar EPP SDK</t>
         <t>Description: The Neustar EPP SDK includes a full client implementation
         of draft-ietf-regext-allocation-token.</t>
@@ -762,6 +762,16 @@ END]]></artwork>
         <t>Licensing: GNU Lesser General Public License</t>
         <t>Contact: kal.feher@team.neustar</t>
         <t>URL: http://registrytoolkit.neustar</t>
+      </section>
+      <section title="Neustar gTLD SRS">
+        <t>Organisation: Neustar Inc.</t>
+        <t>Name: Neustar generic Top Level Domain (gTLD) Shared Registry System (SRS). </t>
+        <t>Description: The Neustar gTLD SRS implements the server side of
+          draft-ietf-regext-allocation-token. For several Top Level Domains</t>
+        <t>Level of maturity: Production</t>
+        <t>Coverage: All server side aspects of the protocol are implemented.</t>
+        <t>Licensing: Proprietary</t>
+        <t>Contact: kal.feher@team.neustar</t>
       </section>
     </section>
 
