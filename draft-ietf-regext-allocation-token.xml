@@ -41,7 +41,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-ietf-regext-allocation-token-04" ipr="trust200902">
+<rfc category="std" docName="draft-ietf-regext-allocation-token-05" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -97,11 +97,11 @@
       </address>
     </author>
 
-    <date day="18" month="October" year="2017"/>
+    <date day="13" month="December" year="2017"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
-      extension for including an allocation token or code for allocating
+      extension for including an allocation token or for allocating
       an object like a domain name to the client.  The allocation token
       MAY be transferred out-of-band to a client to give them authorization
       to allocate an object using one of the EPP transform commands
@@ -116,10 +116,10 @@
       <xref target="RFC5730">Extensible Provisioning Protocol (EPP)</xref>.
       This mapping, an extension to EPP object mappings like the <xref
       target="RFC5731">EPP domain name mapping</xref>, for passing
-      an allocation token one of the EPP transform commands including
-      create, update, and transfer.  The allocation token is known to the
-      server to authorize a client that passes a matching allocation token
-      with one of the supported EPP transform commands.  It is up to server
+      an allocation token to one of the EPP transform commands including
+      create, update, and transfer.  A client MUST pass an allocation token known to the
+      server to be authorized to use one of the supported EPP transform commands.  
+      It is up to server
       policy which EPP transform commands and which objects support the
       allocation token.  The allocation token MAY be returned to an
       authorized client for passing out-of-band to a client that
@@ -516,7 +516,7 @@ C:</epp>]]></artwork>
        child &lt;allocationToken:allocationToken&gt; element, as defined in <xref target="allocationToken"/>, that identifies the extension namespace
        for the client to be authorized to transfer and allocate the object.  If the <xref target="allocationToken">allocation token</xref> does not match
        the object's <xref target="allocationToken">allocation token</xref>, the server MUST
-       return an EPP error result code of 2201.:</t>
+       return an EPP error result code of 2201.</t>
 
        <figure>
             <preamble>Example &lt;transfer&gt; request command to allocate the domain object with
@@ -566,7 +566,7 @@ C:</epp>]]></artwork>
        child &lt;allocationToken:allocationToken&gt; element, as defined in <xref target="allocationToken"/>, that identifies the extension namespace
        for the client to be authorized to allocate the object.  If the <xref target="allocationToken">allocation token</xref> does not match
        the object's <xref target="allocationToken">allocation token</xref>, the server MUST
-       return an EPP error result code of 2201.:</t>
+       return an EPP error result code of 2201.</t>
 
        <figure>
             <preamble>Example use an extension of an empty &lt;update&gt; command to release a
@@ -788,6 +788,9 @@ END]]></artwork>
 
       <t>The authors wish to acknowledge the original concept for this draft and the
       efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</t>
+      
+      <t>Special suggestions that have been incorporated into this document 
+      were provided by Patrick Mevzek.</t>
 
     </section>
 
@@ -873,6 +876,20 @@ END]]></artwork>
     <section title="Change from REGEXT 03 to REGEXT 04" anchor="version-WG03-to-WG04">
       <t><list style="numbers">
         <t>Added Neustar implementation to the Implementation Status section.</t>
+      </list></t>
+    </section>
+    <section title="Change from REGEXT 04 to REGEXT 05" anchor="version-WG034to-WG05">
+      <t><list style="numbers">
+        <t>Updates based on feedback from Patrick Mevzek, that include:
+          <list style="numbers">
+            <t>Remove "or code" from the Abstract section.</t>
+            <t>Add a missing "to" in "an allocation token TO one of the EPP..." in the Introduction section.</t>
+            <t>Reword the "The allocation token is known to the server..." sentence in the Introduction section.</t>
+            <t>Modify the "The allocation token MAY be returned to an authorized client for passing out-of-band to a client that uses it with an EPP transform command" 
+            to clarify who the two separate clients are.</t> 
+            <t>Removed an unneeded ":" from the EPP &lt;transfer&gt; Command and EPP &lt;update&gt; Command sections.</t>
+          </list>
+        </t>
       </list></t>
     </section>
    </section>
