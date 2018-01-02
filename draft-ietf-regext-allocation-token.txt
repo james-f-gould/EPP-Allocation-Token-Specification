@@ -5,8 +5,8 @@
 Network Working Group                                           J. Gould
 Internet-Draft                                            VeriSign, Inc.
 Intended status: Standards Track                                K. Feher
-Expires: June 16, 2018                                           Neustar
-                                                       December 13, 2017
+Expires: July 6, 2018                                            Neustar
+                                                         January 2, 2018
 
 
   Allocation Token Extension for the Extensible Provisioning Protocol
@@ -37,11 +37,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on June 16, 2018.
+   This Internet-Draft will expire on July 6, 2018.
 
 Copyright Notice
 
-   Copyright (c) 2017 IETF Trust and the persons identified as the
+   Copyright (c) 2018 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 1]
+Gould & Feher             Expires July 6, 2018                  [Page 1]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 2]
+Gould & Feher             Expires July 6, 2018                  [Page 2]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 3]
+Gould & Feher             Expires July 6, 2018                  [Page 3]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    The same <allocationToken:allocationToken> element is used for all of
@@ -221,9 +221,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 4]
+Gould & Feher             Expires July 6, 2018                  [Page 4]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Example <check> command for the example.tld domain name using the
@@ -277,9 +277,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 5]
+Gould & Feher             Expires July 6, 2018                  [Page 5]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Example <check> domain response for a <check> command using the
@@ -333,9 +333,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 6]
+Gould & Feher             Expires July 6, 2018                  [Page 6]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Example <check> command with the <allocationToken:allocationToken>
@@ -389,9 +389,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 7]
+Gould & Feher             Expires July 6, 2018                  [Page 7]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Example <check> domain response for multiple domain names in the
@@ -445,9 +445,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 8]
+Gould & Feher             Expires July 6, 2018                  [Page 8]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    allocation token (Section 2.1), but there is no allocation token
@@ -501,9 +501,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                 [Page 9]
+Gould & Feher             Expires July 6, 2018                  [Page 9]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Example <info> domain response using the
@@ -557,9 +557,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 10]
+Gould & Feher             Expires July 6, 2018                 [Page 10]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
 3.2.  EPP Transform Commands
@@ -613,9 +613,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 11]
+Gould & Feher             Expires July 6, 2018                 [Page 11]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Example <create> command to create a domain object with an allocation
@@ -669,9 +669,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 12]
+Gould & Feher             Expires July 6, 2018                 [Page 12]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    The EPP <transfer> request command provides a transform operation
@@ -725,9 +725,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 13]
+Gould & Feher             Expires July 6, 2018                 [Page 13]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    An extension of an empty EPP <update> command defines a new verb that
@@ -781,9 +781,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 14]
+Gould & Feher             Expires July 6, 2018                 [Page 14]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
 4.1.  Allocation Token Extension Schema
@@ -837,9 +837,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 15]
+Gould & Feher             Expires July 6, 2018                 [Page 15]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    XML: See the "Formal Syntax" section of this document.
@@ -893,9 +893,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 16]
+Gould & Feher             Expires July 6, 2018                 [Page 16]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    more mature.  It is up to the individual working groups to use this
@@ -949,9 +949,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 17]
+Gould & Feher             Expires July 6, 2018                 [Page 17]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Name: Neustar generic Top Level Domain (gTLD) Shared Registry System
@@ -1005,9 +1005,9 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 18]
+Gould & Feher             Expires July 6, 2018                 [Page 18]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    [RFC5730]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)",
@@ -1061,9 +1061,9 @@ A.6.  Change from REGEXT 00 to REGEXT 01
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 19]
+Gould & Feher             Expires July 6, 2018                 [Page 19]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
 A.7.  Change from REGEXT 01 to REGEXT 02
@@ -1117,9 +1117,9 @@ Authors' Addresses
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 20]
+Gould & Feher             Expires July 6, 2018                 [Page 20]
 
-Internet-Draft               allocationToken               December 2017
+Internet-Draft               allocationToken                January 2018
 
 
    Kal Feher
@@ -1173,4 +1173,4 @@ Internet-Draft               allocationToken               December 2017
 
 
 
-Gould & Feher             Expires June 16, 2018                [Page 21]
+Gould & Feher             Expires July 6, 2018                 [Page 21]
