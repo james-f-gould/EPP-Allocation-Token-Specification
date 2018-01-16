@@ -958,7 +958,7 @@ Internet-Draft               allocationToken                January 2018
    (SRS).
 
    Description: The Neustar gTLD SRS implements the server side of
-   draft-ietf-regext-allocation-token.  For several Top Level Domains
+   draft-ietf-regext-allocation-token for several Top Level Domains
 
    Level of maturity: Production
 

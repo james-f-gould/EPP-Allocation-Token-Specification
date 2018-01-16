@@ -118,7 +118,7 @@
       target="RFC5731">EPP domain name mapping</xref>, for passing
       an allocation token to one of the EPP transform commands including
       create, update, and transfer.  A client MUST pass an allocation token known to the
-      server to be authorized to use one of the supported EPP transform commands.  
+      server to be authorized to use one of the supported EPP transform commands.
       It is up to server
       policy which EPP transform commands and which objects support the
       allocation token.  The allocation token MAY be returned to an
@@ -767,7 +767,7 @@ END]]></artwork>
         <t>Organisation: Neustar Inc.</t>
         <t>Name: Neustar generic Top Level Domain (gTLD) Shared Registry System (SRS). </t>
         <t>Description: The Neustar gTLD SRS implements the server side of
-          draft-ietf-regext-allocation-token. For several Top Level Domains</t>
+          draft-ietf-regext-allocation-token for several Top Level Domains</t>
         <t>Level of maturity: Production</t>
         <t>Coverage: All server side aspects of the protocol are implemented.</t>
         <t>Licensing: Proprietary</t>
@@ -788,8 +788,8 @@ END]]></artwork>
 
       <t>The authors wish to acknowledge the original concept for this draft and the
       efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</t>
-      
-      <t>Special suggestions that have been incorporated into this document 
+
+      <t>Special suggestions that have been incorporated into this document
       were provided by Patrick Mevzek.</t>
 
     </section>
@@ -885,8 +885,8 @@ END]]></artwork>
             <t>Remove "or code" from the Abstract section.</t>
             <t>Add a missing "to" in "an allocation token TO one of the EPP..." in the Introduction section.</t>
             <t>Reword the "The allocation token is known to the server..." sentence in the Introduction section.</t>
-            <t>Modify the "The allocation token MAY be returned to an authorized client for passing out-of-band to a client that uses it with an EPP transform command" 
-            to clarify who the two separate clients are.</t> 
+            <t>Modify the "The allocation token MAY be returned to an authorized client for passing out-of-band to a client that uses it with an EPP transform command"
+            to clarify who the two separate clients are.</t>
             <t>Removed an unneeded ":" from the EPP &lt;transfer&gt; Command and EPP &lt;update&gt; Command sections.</t>
           </list>
         </t>
