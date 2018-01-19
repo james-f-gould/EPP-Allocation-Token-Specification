@@ -87,22 +87,22 @@ Table of Contents
    6.  Implementation Status . . . . . . . . . . . . . . . . . . . .  16
      6.1.  Verisign EPP SDK  . . . . . . . . . . . . . . . . . . . .  17
      6.2.  Neustar EPP SDK . . . . . . . . . . . . . . . . . . . . .  17
-     6.3.  Neustar gTLD SRS  . . . . . . . . . . . . . . . . . . . .  17
+     6.3.  Neustar gTLD SRS  . . . . . . . . . . . . . . . . . . . .  18
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  18
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  18
-   9.  Normative References  . . . . . . . . . . . . . . . . . . . .  18
-   Appendix A.  Change History . . . . . . . . . . . . . . . . . . .  19
-     A.1.  Change from 00 to 01  . . . . . . . . . . . . . . . . . .  19
-     A.2.  Change from 01 to 02  . . . . . . . . . . . . . . . . . .  19
-     A.3.  Change from 02 to 03  . . . . . . . . . . . . . . . . . .  19
-     A.4.  Change from 03 to 04  . . . . . . . . . . . . . . . . . .  19
-     A.5.  Change from 04 to REGEXT 00 . . . . . . . . . . . . . . .  19
-     A.6.  Change from REGEXT 00 to REGEXT 01  . . . . . . . . . . .  19
-     A.7.  Change from REGEXT 01 to REGEXT 02  . . . . . . . . . . .  19
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  19
+   9.  Normative References  . . . . . . . . . . . . . . . . . . . .  19
+   Appendix A.  Change History . . . . . . . . . . . . . . . . . . .  20
+     A.1.  Change from 00 to 01  . . . . . . . . . . . . . . . . . .  20
+     A.2.  Change from 01 to 02  . . . . . . . . . . . . . . . . . .  20
+     A.3.  Change from 02 to 03  . . . . . . . . . . . . . . . . . .  20
+     A.4.  Change from 03 to 04  . . . . . . . . . . . . . . . . . .  20
+     A.5.  Change from 04 to REGEXT 00 . . . . . . . . . . . . . . .  20
+     A.6.  Change from REGEXT 00 to REGEXT 01  . . . . . . . . . . .  20
+     A.7.  Change from REGEXT 01 to REGEXT 02  . . . . . . . . . . .  20
      A.8.  Change from REGEXT 02 to REGEXT 03  . . . . . . . . . . .  20
      A.9.  Change from REGEXT 03 to REGEXT 04  . . . . . . . . . . .  20
      A.10. Change from REGEXT 04 to REGEXT 05  . . . . . . . . . . .  20
-     A.11. Change from REGEXT 05 to REGEXT 06  . . . . . . . . . . .  20
+     A.11. Change from REGEXT 05 to REGEXT 06  . . . . . . . . . . .  21
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  22
 
 
@@ -790,34 +790,37 @@ Internet-Draft               allocationToken                January 2018
 
    BEGIN
    <?xml version="1.0" encoding="UTF-8"?>
-
-   <schema targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
+   <schema
+     targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
      xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
      xmlns="http://www.w3.org/2001/XMLSchema"
-     elementFormDefault="qualified">
+     elementFormDefault="qualified"
+   >
 
      <annotation>
        <documentation>
          Extensible Provisioning Protocol v1.0
-         Allocation Token Extension.
+         Allocation
+         Token Extension.
        </documentation>
      </annotation>
 
-     <!-- Element used in info command to get Allocation Token. -->
+     <!-- Element used in info command to get allocation token. -->
      <element name="info"/>
 
      <!-- Allocation Token used in transform
-     commands and info response -->
-     <element name="allocationToken"
+       commands and info response -->
+     <element
+       name="allocationToken"
        type="allocationToken:allocationTokenType"/>
 
-      <complexType name="allocationTokenType">
-       <simpleContent>
-         <extension base="token"/>
-       </simpleContent>
-     </complexType>
+     <simpleType name="allocationTokenType">
+       <restriction base="token">
+         <minLength value="1"/>
+       </restriction>
+     </simpleType>
 
-      <!-- End of schema.-->
+   <!-- End of schema. -->
    </schema>
    END
 
@@ -829,10 +832,7 @@ Internet-Draft               allocationToken                January 2018
    conforming to a registry mechanism described in [RFC3688].  The
    following URI assignment is requested of IANA:
 
-   URI: ietf:params:xml:ns:allocationToken-1.0
-
-   Registrant Contact: See the "Author's Address" section of this
-   document.
+   Registration request for the allocationToken namespace:
 
 
 
@@ -842,7 +842,15 @@ Gould & Feher             Expires July 22, 2018                [Page 15]
 Internet-Draft               allocationToken                January 2018
 
 
-   XML: See the "Formal Syntax" section of this document.
+      URI: ietf:params:xml:ns:allocationToken-1.0
+      Registrant Contact: IESG
+      XML: None.  Namespace URIs do not represent an XML specification.
+
+   Registration request for the allocationToken XML schema:
+
+      URI: ietf:params:xml:ns:allocationToken-1.0
+      Registrant Contact: IESG
+      XML: See the "Formal Syntax" section of this document.
 
 5.2.  EPP Extension Registry
 
@@ -881,6 +889,15 @@ Internet-Draft               allocationToken                January 2018
    Furthermore, no effort has been spent to verify the information
    presented here that was supplied by IETF contributors.  This is not
    intended as, and must not be construed to be, a catalog of available
+
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 16]
+
+Internet-Draft               allocationToken                January 2018
+
+
    implementations or their features.  Readers are advised to note that
    other implementations may exist.
 
@@ -890,13 +907,6 @@ Internet-Draft               allocationToken                January 2018
    experimentation and feedback that have made the implemented protocols
    more mature.  It is up to the individual working groups to use this
    information as they see fit".
-
-
-
-Gould & Feher             Expires July 22, 2018                [Page 16]
-
-Internet-Draft               allocationToken                January 2018
-
 
 6.1.  Verisign EPP SDK
 
@@ -936,6 +946,14 @@ Internet-Draft               allocationToken                January 2018
 
    Contact: kal.feher@team.neustar
 
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 17]
+
+Internet-Draft               allocationToken                January 2018
+
+
    URL: http://registrytoolkit.neustar
 
 6.3.  Neustar gTLD SRS
@@ -944,15 +962,6 @@ Internet-Draft               allocationToken                January 2018
 
    Name: Neustar generic Top Level Domain (gTLD) Shared Registry System
    (SRS).
-
-
-
-
-
-Gould & Feher             Expires July 22, 2018                [Page 17]
-
-Internet-Draft               allocationToken                January 2018
-
 
    Description: The Neustar gTLD SRS implements the server side of
    draft-ietf-regext-allocation-token for several Top Level Domains.
@@ -967,10 +976,39 @@ Internet-Draft               allocationToken                January 2018
 
 7.  Security Considerations
 
-   The mapping extensions described in this document do not provide any
-   security services beyond those described by EPP [RFC5730] and
-   protocol layers used by EPP.  The security considerations described
-   in these other specifications apply to this specification as well.
+   The mapping described in this document does not provide any security
+   services beyond those described by EPP [RFC5730] and protocol layers
+   used by EPP.  The security considerations described in these other
+   specifications apply to this specification as well.
+
+   The mapping acts as a conduit for the passing of Allocation Tokens
+   between a client and a server.  The definition of the Allocation
+   Token is defined outside of this mapping.  The following are security
+   considerations in the definition and use of an Allocation Token:
+
+   1.  An Allocation Token SHOULD be considered secret information by
+       the client and should be protected at rest and in transit.
+   2.  An Allocation Token SHOULD be single use, meaning it should be
+       unique per object and per allocation operation.
+   3.  An Allocation Token SHOULD have a limited life with some form of
+       expiry in the Allocation Token if generated by a trusted 3rd
+       third party, or with a server-side expiry if generated by the
+       server.
+   4.  An Allocation Token SHOULD use a strong random value if it is
+       based on an unsigned code.
+   5.  An Allocation Token SHOULD leverage digital signatures to confirm
+       its authenticity if generated by a trusted 3rd party.
+   6.  An Allocation Token that is signed XML SHOULD be encoded (e.g.,
+       base64) to mitigate server validation issues.
+
+
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 18]
+
+Internet-Draft               allocationToken                January 2018
+
 
 8.  Acknowledgements
 
@@ -979,8 +1017,8 @@ Internet-Draft               allocationToken                January 2018
    and Sharon Wodjenski.
 
    Special suggestions that have been incorporated into this document
-   were provided by Rubens Kuhl, Alexander Mayrhofer, and Patrick
-   Mevzek.
+   were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer,
+   and Patrick Mevzek.
 
 9.  Normative References
 
@@ -1002,14 +1040,6 @@ Internet-Draft               allocationToken                January 2018
               STD 69, RFC 5730, DOI 10.17487/RFC5730, August 2009,
               <https://www.rfc-editor.org/info/rfc5730>.
 
-
-
-
-Gould & Feher             Expires July 22, 2018                [Page 18]
-
-Internet-Draft               allocationToken                January 2018
-
-
    [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
               Domain Name Mapping", STD 69, RFC 5731,
               DOI 10.17487/RFC5731, August 2009, <https://www.rfc-
@@ -1023,6 +1053,18 @@ Internet-Draft               allocationToken                January 2018
    [RFC7451]  Hollenbeck, S., "Extension Registry for the Extensible
               Provisioning Protocol", RFC 7451, DOI 10.17487/RFC7451,
               February 2015, <https://www.rfc-editor.org/info/rfc7451>.
+
+
+
+
+
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 19]
+
+Internet-Draft               allocationToken                January 2018
+
 
 Appendix A.  Change History
 
@@ -1057,15 +1099,6 @@ A.7.  Change from REGEXT 01 to REGEXT 02
 
    1.  Added the Implementation Status section.
 
-
-
-
-
-Gould & Feher             Expires July 22, 2018                [Page 19]
-
-Internet-Draft               allocationToken                January 2018
-
-
 A.8.  Change from REGEXT 02 to REGEXT 03
 
    1.  Changed Neustar author to Kal Feher.
@@ -1080,6 +1113,15 @@ A.10.  Change from REGEXT 04 to REGEXT 05
    1.  Updates based on feedback from Patrick Mevzek, that include:
 
        1.  Remove "or code" from the Abstract section.
+
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 20]
+
+Internet-Draft               allocationToken                January 2018
+
+
        2.  Add a missing "to" in "an allocation token TO one of the
            EPP..." in the Introduction section.
        3.  Reword the "The allocation token is known to the server..."
@@ -1113,15 +1155,6 @@ A.11.  Change from REGEXT 05 to REGEXT 06
             "It is up to server policy which EPP transform commands and
             which objects support the Allocation Token."
        6.   Add the definition of Allocation to the Introduction.
-
-
-
-
-Gould & Feher             Expires July 22, 2018                [Page 20]
-
-Internet-Draft               allocationToken                January 2018
-
-
        7.   Removed "transform" from "all of the supported EPP transform
             commands" in the "Allocation Token" section, since the
             Allocation Token can be used with the "check" command as
@@ -1137,6 +1170,14 @@ Internet-Draft               allocationToken                January 2018
             server..." to "<check> to determine if an object can be
             provisioned..." and remove "detailed" in the description of
             the <info> in the "EPP Query Commands" section.
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 21]
+
+Internet-Draft               allocationToken                January 2018
+
+
        11.  Add missing description of the expected <check> response
             behavior.
        12.  Replaced the example reason "Invalid domain-token pair" with
@@ -1167,18 +1208,31 @@ Internet-Draft               allocationToken                January 2018
        21.  Modified the first sentence of the "EPP Extension Registry"
             section to read "The following registration of the EPP
             Extension Registry, described in RFC7451, is requested"
+   3.  Updates based on feedback from Scott Hollenbeck, that include:
+
+       1.  Revised XML schema to included a minimum length of 1 for the
+           allocationTokenType.
+       2.  Revised the "IANA Considerations" section to include the
+           registration of the XML schema.
+       3.  Revised the "Security Considerations" section to include
+           considerations for the definition of the Allocation Tokens.
+
+Authors' Addresses
 
 
 
 
 
 
-Gould & Feher             Expires July 22, 2018                [Page 21]
+
+
+
+
+
+Gould & Feher             Expires July 22, 2018                [Page 22]
 
 Internet-Draft               allocationToken                January 2018
 
-
-Authors' Addresses
 
    James Gould
    VeriSign, Inc.
@@ -1229,4 +1283,6 @@ Authors' Addresses
 
 
 
-Gould & Feher             Expires July 22, 2018                [Page 22]
+
+
+Gould & Feher             Expires July 22, 2018                [Page 23]
