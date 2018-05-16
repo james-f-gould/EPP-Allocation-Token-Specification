@@ -761,6 +761,16 @@ END]]></artwork>
         <t>Licensing: Proprietary</t>
         <t>Contact: quoc-anh.np@team.neustar</t>
       </section>
+      <section title="Net::DRI">
+        <t>Organization: Dot and Co</t>
+        <t>Name: Net::DRI</t>
+        <t>Description: Net::DRI implements the client-side of draft-ietf-regext-allocation-token.</t>
+        <t>Level of maturity: Production</t>
+        <t>Coverage: All client-side aspects of the protocol are implemented.</t>
+        <t>Licensing: GNU Lesser General Public License</t>
+        <t>Contact: netdri@dotandco.com</t>
+      </section>
+      
     </section>
 
 
@@ -959,6 +969,7 @@ END]]></artwork>
       <t><list style="numbers">
         <t>Changed Kal Feher's contact e-mail address.</t>
         <t>Changed Neustar's Implementation Status contact e-mail address.</t> 
+        <t>Added the Net::DRI sub-section to the Implementation Status section.</t>
       </list></t>    
      </section>
    </section>
