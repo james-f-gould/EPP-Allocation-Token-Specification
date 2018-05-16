@@ -40,7 +40,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-ietf-regext-allocation-token-07" ipr="trust200902">
+<rfc category="std" docName="draft-ietf-regext-allocation-token-08" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -90,13 +90,13 @@
              <country>AU</country>
           </postal>
 
-         <email>kal.feher@team.neustar</email>
+         <email>ietf@feherfamily.org</email>
 
          <uri>http://www.neustar.biz</uri>
       </address>
     </author>
 
-    <date day="18" month="April" year="2018"/>
+    <date day="16" month="May" year="2018"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -748,7 +748,7 @@ END]]></artwork>
         <t>Level of maturity: Production</t>
         <t>Coverage: All aspects of the protocol are implemented.</t>
         <t>Licensing: GNU Lesser General Public License</t>
-        <t>Contact: kal.feher@team.neustar</t>
+        <t>Contact: quoc-anh.np@team.neustar</t>
         <t>URL: http://registrytoolkit.neustar</t>
       </section>
       <section title="Neustar gTLD SRS">
@@ -759,7 +759,7 @@ END]]></artwork>
         <t>Level of maturity: Production</t>
         <t>Coverage: All server side aspects of the protocol are implemented.</t>
         <t>Licensing: Proprietary</t>
-        <t>Contact: kal.feher@team.neustar</t>
+        <t>Contact: quoc-anh.np@team.neustar</t>
       </section>
     </section>
 
@@ -953,6 +953,12 @@ END]]></artwork>
             <t>Moved RFC 7451 to an informational reference.</t>
           </list>
         </t>
+      </list></t>    
+     </section>
+    <section title="Change from REGEXT 07 to REGEXT 08" anchor="version-WG07to-WG08">
+      <t><list style="numbers">
+        <t>Changed Kal Feher's contact e-mail address.</t>
+        <t>Changed Neustar's Implementation Status contact e-mail address.</t> 
       </list></t>    
      </section>
    </section>

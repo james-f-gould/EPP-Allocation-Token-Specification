@@ -416,6 +416,7 @@
 <link href="#rfc.appendix.A.10" rel="Chapter" title="A.10 Change from REGEXT 04 to REGEXT 05"/>
 <link href="#rfc.appendix.A.11" rel="Chapter" title="A.11 Change from REGEXT 05 to REGEXT 06"/>
 <link href="#rfc.appendix.A.12" rel="Chapter" title="A.12 Change from REGEXT 06 to REGEXT 07"/>
+<link href="#rfc.appendix.A.13" rel="Chapter" title="A.13 Change from REGEXT 07 to REGEXT 08"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
@@ -423,8 +424,8 @@
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Gould, J. and K. Feher" />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-regext-allocation-token-07" />
-  <meta name="dct.issued" scheme="ISO8601" content="2018-4-18" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-regext-allocation-token-08" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-5-16" />
   <meta name="dct.abstract" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an Allocation Token in query and transform commands.  The Allocation Token is used as a credential that authorizes a client to request the allocation of a specific object from the server, using one of the EPP transform commands including create and transfer." />
   <meta name="description" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an Allocation Token in query and transform commands.  The Allocation Token is used as a credential that authorizes a client to request the allocation of a specific object from the server, using one of the EPP transform commands including create and transfer." />
 
@@ -448,12 +449,12 @@
   <td class="right">K. Feher</td>
 </tr>
 <tr>
-  <td class="left">Expires: October 20, 2018</td>
+  <td class="left">Expires: November 17, 2018</td>
   <td class="right">Neustar</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">April 18, 2018</td>
+  <td class="right">May 16, 2018</td>
 </tr>
 
     	
@@ -461,7 +462,7 @@
   </table>
 
   <p class="title">Allocation Token Extension for the Extensible Provisioning Protocol (EPP)<br />
-  <span class="filename">draft-ietf-regext-allocation-token-07</span></p>
+  <span class="filename">draft-ietf-regext-allocation-token-08</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -473,7 +474,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on October 20, 2018.</p>
+<p>This Internet-Draft will expire on November 17, 2018.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -527,6 +528,7 @@
 <li>A.10.   <a href="#rfc.appendix.A.10">Change from REGEXT 04 to REGEXT 05</a></li>
 <li>A.11.   <a href="#rfc.appendix.A.11">Change from REGEXT 05 to REGEXT 06</a></li>
 <li>A.12.   <a href="#rfc.appendix.A.12">Change from REGEXT 06 to REGEXT 07</a></li>
+<li>A.13.   <a href="#rfc.appendix.A.13">Change from REGEXT 07 to REGEXT 08</a></li>
 </ul><li><a href="#rfc.authors">Authors' Addresses</a></li>
 
 
@@ -884,7 +886,7 @@ END</pre>
 <p id="rfc.section.6.2.p.4">Level of maturity: Production</p>
 <p id="rfc.section.6.2.p.5">Coverage: All aspects of the protocol are implemented.</p>
 <p id="rfc.section.6.2.p.6">Licensing: GNU Lesser General Public License</p>
-<p id="rfc.section.6.2.p.7">Contact: kal.feher@team.neustar</p>
+<p id="rfc.section.6.2.p.7">Contact: quoc-anh.np@team.neustar</p>
 <p id="rfc.section.6.2.p.8">URL: http://registrytoolkit.neustar</p>
 <h1 id="rfc.section.6.3"><a href="#rfc.section.6.3">6.3.</a> Neustar gTLD SRS</h1>
 <p id="rfc.section.6.3.p.1">Organisation: Neustar Inc.</p>
@@ -893,7 +895,7 @@ END</pre>
 <p id="rfc.section.6.3.p.4">Level of maturity: Production</p>
 <p id="rfc.section.6.3.p.5">Coverage: All server side aspects of the protocol are implemented.</p>
 <p id="rfc.section.6.3.p.6">Licensing: Proprietary</p>
-<p id="rfc.section.6.3.p.7">Contact: kal.feher@team.neustar</p>
+<p id="rfc.section.6.3.p.7">Contact: quoc-anh.np@team.neustar</p>
 <h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#Security" id="Security">Security Considerations</a></h1>
 <p id="rfc.section.7.p.1">The mapping described in this document does not provide any security services beyond those described by <a href="#RFC5730">EPP</a> <cite title="NONE">[RFC5730]</cite> and protocol layers used by EPP. The security considerations described in these other specifications apply to this specification as well.</p>
 <p id="rfc.section.7.p.2">The mapping acts as a conduit for the passing of Allocation Tokens between a client and a server.  The definition of the Allocation Token is defined outside of this mapping.  The following are security considerations in the definition and use of an Allocation Token:</p>
@@ -1033,6 +1035,13 @@ END</pre>
 <ol>
   <li>Updates based on feedback from Patrick Mevzek: <ol><li>Updated obsoleted RFC 7942 to RFC 7942.</li><li>Moved RFC 7451 to an informational reference.</li></ol><p> </p></li>
 </ol>
+<h1 id="rfc.appendix.A.13"><a href="#rfc.appendix.A.13">A.13.</a> <a href="#version-WG07to-WG08" id="version-WG07to-WG08">Change from REGEXT 07 to REGEXT 08</a></h1>
+<p/>
+
+<ol>
+  <li>Changed Kal Feher's contact e-mail address.</li>
+  <li>Changed Neustar's Implementation Status contact e-mail address.</li>
+</ol>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>
 </h1>
@@ -1079,7 +1088,7 @@ END</pre>
 	  </span>
 	  <span class="country-name vcardline">AU</span>
 	</span>
-	<span class="vcardline">EMail: <a href="mailto:kal.feher@team.neustar">kal.feher@team.neustar</a></span>
+	<span class="vcardline">EMail: <a href="mailto:ietf@feherfamily.org">ietf@feherfamily.org</a></span>
 
 <span class="vcardline">URI: <a href="http://www.neustar.biz">http://www.neustar.biz</a></span>
 
