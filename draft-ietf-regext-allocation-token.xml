@@ -660,7 +660,7 @@ END]]></artwork>
          <t>Registration request for the allocationToken XML schema:</t>
          
          <t><list>
-         <t>URI: ietf:params:xml:ns:allocationToken-1.0</t>
+         <t>URI: ietf:params:xml:schema:allocationToken-1.0</t>
          
          <t>Registrant Contact: IESG</t>
           
@@ -804,7 +804,7 @@ END]]></artwork>
       efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</t>
 
       <t>Special suggestions that have been incorporated into this document
-      were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer, and Patrick Mevzek.</t>
+      were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</t>
 
     </section>
 
@@ -996,6 +996,7 @@ marks)</t>
    			<t>In "XML Namespace", remove the sentence "The following URI assignment is requested of IANA:"</t>
    			<t>In "Security Considerations", change "An Allocation Token should is" to "An Allocation Token that is".  Also informatively cite RFC 4648 for the base64 reference.</t>
         </list></t>
+        <t>Change "ietf:params:xml:ns:allocationToken-1.0" to "ietf:params:xml:schema:allocationToken-1.0" for the XML schema IANA registration.</t>
       </list></t>    
      </section>
    </section>

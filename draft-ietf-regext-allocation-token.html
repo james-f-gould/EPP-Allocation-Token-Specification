@@ -856,7 +856,7 @@ END</pre>
 <p/>
 
 <ul class="empty">
-  <li>URI: ietf:params:xml:ns:allocationToken-1.0</li>
+  <li>URI: ietf:params:xml:schema:allocationToken-1.0</li>
   <li>Registrant Contact: IESG</li>
   <li>XML: See the "Formal Syntax" section of this document.</li>
 </ul>
@@ -923,7 +923,7 @@ END</pre>
 </ol>
 <h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#Acknowledgements" id="Acknowledgements">Acknowledgements</a></h1>
 <p id="rfc.section.8.p.1">The authors wish to acknowledge the original concept for this draft and the efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</p>
-<p id="rfc.section.8.p.2">Special suggestions that have been incorporated into this document were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer, and Patrick Mevzek.</p>
+<p id="rfc.section.8.p.2">Special suggestions that have been incorporated into this document were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</p>
 <h1 id="rfc.references"><a href="#rfc.references">9.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">9.1.</a> Normative References</h1>
 <table>
@@ -1072,6 +1072,7 @@ END</pre>
 
 <ol>
   <li>Updates based on the AD review by Adam Roach, that include: <ol><li>In "Abstract", set "query" and "transform" off in some way (e.g., using quotation marks)</li><li>In "Conventions Used in This Document", please update to use the boilerplate from RFC 8174.</li><li>Remove "allocationToken-1.0" is used as an abbreviation for "urn:ietf:params:xml:ns:allocationToken-1.0".</li><li>In "Allocation Token", change "The server MUST have the Allocation Token" to "The server MAY have the Allocation Token".</li><li>In "EPP &lt;check&gt; Command", change "This extension allow clients" to "This extension allows clients".</li><li>Use domains reserved by RFC 2026 for the examples.  The example domain "example.tld" was changed to "allocation.example" and the example domain "example2.tld" was changed to "allocation2.example".</li><li>In "EPP &lt;info&gt; Command", change "...the server MUST return an EPP error result code of 2303 object referencing the &lt;allocationToken:info&gt; element." to "...the server MUST return an EPP error result code of 2303."</li><li>In "EPP &lt;transfer&gt; Query Command", remove "the" before "[RFC5730]".</li><li>In "EPP &lt;transfer&gt; Command", change "If the Allocation Token does not apply to the object..." to "If the Allocation Token is invalid or not required for the object...".</li><li>In "XML Namespace", remove the sentence "The following URI assignment is requested of IANA:"</li><li>In "Security Considerations", change "An Allocation Token should is" to "An Allocation Token that is".  Also informatively cite RFC 4648 for the base64 reference.</li></ol></li>
+  <li>Change "ietf:params:xml:ns:allocationToken-1.0" to "ietf:params:xml:schema:allocationToken-1.0" for the XML schema IANA registration.</li>
 </ol>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>

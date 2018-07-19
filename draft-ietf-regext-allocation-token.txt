@@ -801,7 +801,7 @@ Internet-Draft               allocationToken                   July 2018
 
    Registration request for the allocationToken XML schema:
 
-      URI: ietf:params:xml:ns:allocationToken-1.0
+      URI: ietf:params:xml:schema:allocationToken-1.0
       Registrant Contact: IESG
       XML: See the "Formal Syntax" section of this document.
 
@@ -989,7 +989,7 @@ Internet-Draft               allocationToken                   July 2018
 
    Special suggestions that have been incorporated into this document
    were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer,
-   and Patrick Mevzek.
+   Patrick Mevzek, and Adam Roach.
 
 9.  References
 
@@ -1267,6 +1267,9 @@ A.14.  Change from REGEXT 08 to REGEXT 09
        11.  In "Security Considerations", change "An Allocation Token
             should is" to "An Allocation Token that is".  Also
             informatively cite RFC 4648 for the base64 reference.
+   2.  Change "ietf:params:xml:ns:allocationToken-1.0" to
+       "ietf:params:xml:schema:allocationToken-1.0" for the XML schema
+       IANA registration.
 
 Authors' Addresses
 
@@ -1278,9 +1281,6 @@ Authors' Addresses
 
    Email: jgould@verisign.com
    URI:   http://www.verisigninc.com
-
-
-
 
 
 
