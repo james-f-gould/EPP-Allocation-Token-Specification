@@ -5,8 +5,8 @@
 Network Working Group                                           J. Gould
 Internet-Draft                                            VeriSign, Inc.
 Intended status: Standards Track                                K. Feher
-Expires: February 1, 2019                                        Neustar
-                                                           July 31, 2018
+Expires: February 4, 2019                                        Neustar
+                                                          August 3, 2018
 
 
   Allocation Token Extension for the Extensible Provisioning Protocol
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 1, 2019.
+   This Internet-Draft will expire on February 4, 2019.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 1]
+Gould & Feher           Expires February 4, 2019                [Page 1]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    include Simplified BSD License text as described in Section 4.e of
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 2]
+Gould & Feher           Expires February 4, 2019                [Page 2]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
      A.11. Change from REGEXT 05 to REGEXT 06  . . . . . . . . . . .  21
@@ -165,9 +165,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 3]
+Gould & Feher           Expires February 4, 2019                [Page 3]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    white space in examples are provided only to illustrate element
@@ -221,9 +221,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 4]
+Gould & Feher           Expires February 4, 2019                [Page 4]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 3.1.1.  EPP <check> Command
@@ -277,9 +277,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 5]
+Gould & Feher           Expires February 4, 2019                [Page 5]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
        availability status as unavailable (e.g., "avail" attribute is
@@ -333,9 +333,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 6]
+Gould & Feher           Expires February 4, 2019                [Page 6]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Example <check> command with the <allocationToken:allocationToken>
@@ -389,9 +389,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 7]
+Gould & Feher           Expires February 4, 2019                [Page 7]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Example <check> domain response for multiple domain names in the
@@ -445,9 +445,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 8]
+Gould & Feher           Expires February 4, 2019                [Page 8]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    the object, the server MUST return an EPP error result code of 2303.
@@ -501,9 +501,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019                [Page 9]
+Gould & Feher           Expires February 4, 2019                [Page 9]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Example <info> domain response using the
@@ -557,9 +557,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 10]
+Gould & Feher           Expires February 4, 2019               [Page 10]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 3.2.  EPP Transform Commands
@@ -613,9 +613,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 11]
+Gould & Feher           Expires February 4, 2019               [Page 11]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Example <create> command to create a domain object with an Allocation
@@ -669,9 +669,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 12]
+Gould & Feher           Expires February 4, 2019               [Page 12]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    The EPP <transfer> request command provides a transform operation
@@ -725,9 +725,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 13]
+Gould & Feher           Expires February 4, 2019               [Page 13]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 4.  Formal Syntax
@@ -781,9 +781,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 14]
+Gould & Feher           Expires February 4, 2019               [Page 14]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 5.  IANA Considerations
@@ -837,9 +837,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 15]
+Gould & Feher           Expires February 4, 2019               [Page 15]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Internet-Draft, and is based on a proposal described in RFC 7942
@@ -893,9 +893,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 16]
+Gould & Feher           Expires February 4, 2019               [Page 16]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Level of maturity: Production
@@ -949,9 +949,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 17]
+Gould & Feher           Expires February 4, 2019               [Page 17]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 7.  Security Considerations
@@ -1005,9 +1005,9 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 18]
+Gould & Feher           Expires February 4, 2019               [Page 18]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    [RFC3688]  Mealling, M., "The IETF XML Registry", BCP 81, RFC 3688,
@@ -1061,9 +1061,9 @@ A.1.  Change from 00 to 01
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 19]
+Gould & Feher           Expires February 4, 2019               [Page 19]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 A.2.  Change from 01 to 02
@@ -1117,9 +1117,9 @@ A.10.  Change from REGEXT 04 to REGEXT 05
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 20]
+Gould & Feher           Expires February 4, 2019               [Page 20]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
        5.  Removed an unneeded ":" from the EPP <transfer> Command and
@@ -1173,9 +1173,9 @@ A.11.  Change from REGEXT 05 to REGEXT 06
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 21]
+Gould & Feher           Expires February 4, 2019               [Page 21]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
             response sentences, and the "object referencing the
@@ -1229,9 +1229,9 @@ A.13.  Change from REGEXT 07 to REGEXT 08
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 22]
+Gould & Feher           Expires February 4, 2019               [Page 22]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
 A.14.  Change from REGEXT 08 to REGEXT 09
@@ -1285,9 +1285,9 @@ Authors' Addresses
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 23]
+Gould & Feher           Expires February 4, 2019               [Page 23]
 
-Internet-Draft               allocationToken                   July 2018
+Internet-Draft               allocationToken                 August 2018
 
 
    Kal Feher
@@ -1341,4 +1341,4 @@ Internet-Draft               allocationToken                   July 2018
 
 
 
-Gould & Feher           Expires February 1, 2019               [Page 24]
+Gould & Feher           Expires February 4, 2019               [Page 24]
