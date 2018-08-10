@@ -419,6 +419,7 @@
 <link href="#rfc.appendix.A.12" rel="Chapter" title="A.12 Change from REGEXT 06 to REGEXT 07"/>
 <link href="#rfc.appendix.A.13" rel="Chapter" title="A.13 Change from REGEXT 07 to REGEXT 08"/>
 <link href="#rfc.appendix.A.14" rel="Chapter" title="A.14 Change from REGEXT 08 to REGEXT 09"/>
+<link href="#rfc.appendix.A.15" rel="Chapter" title="A.15 Change from REGEXT 09 to REGEXT 10"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
@@ -426,8 +427,8 @@
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Gould, J. and K. Feher" />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-regext-allocation-token-09" />
-  <meta name="dct.issued" scheme="ISO8601" content="2018-8-3" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-regext-allocation-token-10" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-8-10" />
   <meta name="dct.abstract" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an Allocation Token in &quot;query&quot; and &quot;transform&quot; commands.  The Allocation Token is used as a credential that authorizes a client to request the allocation of a specific object from the server, using one of the EPP transform commands including create and transfer." />
   <meta name="description" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an Allocation Token in &quot;query&quot; and &quot;transform&quot; commands.  The Allocation Token is used as a credential that authorizes a client to request the allocation of a specific object from the server, using one of the EPP transform commands including create and transfer." />
 
@@ -451,12 +452,12 @@
   <td class="right">K. Feher</td>
 </tr>
 <tr>
-  <td class="left">Expires: February 4, 2019</td>
+  <td class="left">Expires: February 11, 2019</td>
   <td class="right">Neustar</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">August 3, 2018</td>
+  <td class="right">August 10, 2018</td>
 </tr>
 
     	
@@ -464,7 +465,7 @@
   </table>
 
   <p class="title">Allocation Token Extension for the Extensible Provisioning Protocol (EPP)<br />
-  <span class="filename">draft-ietf-regext-allocation-token-09</span></p>
+  <span class="filename">draft-ietf-regext-allocation-token-10</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -476,7 +477,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on February 4, 2019.</p>
+<p>This Internet-Draft will expire on February 11, 2019.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -533,6 +534,7 @@
 <li>A.12.   <a href="#rfc.appendix.A.12">Change from REGEXT 06 to REGEXT 07</a></li>
 <li>A.13.   <a href="#rfc.appendix.A.13">Change from REGEXT 07 to REGEXT 08</a></li>
 <li>A.14.   <a href="#rfc.appendix.A.14">Change from REGEXT 08 to REGEXT 09</a></li>
+<li>A.15.   <a href="#rfc.appendix.A.15">Change from REGEXT 09 to REGEXT 10</a></li>
 </ul><li><a href="#rfc.authors">Authors' Addresses</a></li>
 
 
@@ -591,6 +593,7 @@ C:&lt;/epp&gt;</pre>
 <ol>
   <li>If an object requires an Allocation Token and the Allocation Token does apply to the object, then the server MUST return the availability status as available (e.g., "avail" attribute is "1" or "true").</li>
   <li>If an object requires an Allocation Token and the Allocation Token does not apply to the object or an object does not require an Allocation Token, then the server SHOULD return the availability status as unavailable (e.g., "avail" attribute is "0" or "false").</li>
+  <li>If an object does not require an Allocation Token, the server MAY return the availability status as available (e.g., "avail" attribute is "1" or "true").</li>
 </ol>
 <p>Example &lt;check&gt; domain response for a &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt; extension:</p>
 <pre>
@@ -669,7 +672,7 @@ S:&lt;/epp&gt;</pre>
 <p id="rfc.section.3.1.1.p.5">This extension does not add any elements to the EPP &lt;check&gt; response described in the <a href="#RFC5730">[RFC5730]</a>.</p>
 <h1 id="rfc.section.3.1.2"><a href="#rfc.section.3.1.2">3.1.2.</a> <a href="#infoCommand" id="infoCommand">EPP &lt;info&gt; Command</a></h1>
 <p id="rfc.section.3.1.2.p.1">This extension defines additional elements to extend the EPP &lt;info&gt; command of an object mapping like <a href="#RFC5731">[RFC5731]</a>.</p>
-<p id="rfc.section.3.1.2.p.2">The EPP &lt;info&gt; command allows a client to request information associated with an existing object.  Authorized clients MAY retrieve the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> along with the other object information using the &lt;allocationToken:info&gt; element.  The &lt;allocationToken:info&gt; element is an empty element that serves as a marker to the server to return the &lt;allocationToken:allocationToken&gt; element in the info response.  If the client is not authorized to receive the Allocation Token, the server MUST return an EPP error result code of 2201.  If the client is authorized to receive the Allocation Token, but there is no Allocation Token associated with the object, the server MUST return an EPP error result code of 2303.  The auhorization is subject to server policy.</p>
+<p id="rfc.section.3.1.2.p.2">The EPP &lt;info&gt; command allows a client to request information associated with an existing object.  Authorized clients MAY retrieve the <a href="#allocationToken">Allocation Token</a> <cite title="NONE">[allocationToken]</cite> along with the other object information using the &lt;allocationToken:info&gt; element.  The &lt;allocationToken:info&gt; element is an empty element that serves as a marker to the server to return the &lt;allocationToken:allocationToken&gt; element in the info response.  If the client is not authorized to receive the Allocation Token, the server MUST return an EPP error result code of 2201.  If the client is authorized to receive the Allocation Token, but there is no Allocation Token associated with the object, the server MUST return an EPP error result code of 2303.  The authorization is subject to server policy.</p>
 <p>Example &lt;info&gt; command with the allocationToken:info extension for the allocation.example domain name:</p>
 <pre>
 C:&lt;?xml version="1.0" encoding="UTF-8" standalone="no"?&gt;
@@ -808,36 +811,35 @@ C:&lt;/epp&gt;</pre>
 <pre>
 BEGIN
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;schema
-  targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
-  xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
-  xmlns="http://www.w3.org/2001/XMLSchema"
-  elementFormDefault="qualified"
-&gt;
-
+&lt;schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0" 
+  targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0" 
+  elementFormDefault="qualified"&gt;
   &lt;annotation&gt;
-    &lt;documentation&gt;
-      Extensible Provisioning Protocol v1.0
+    &lt;documentation&gt;Extensible Provisioning Protocol v1.0
       Allocation
-      Token Extension.
-    &lt;/documentation&gt;
+      Token Extension.&lt;/documentation&gt;
   &lt;/annotation&gt;
-
+  
   &lt;!-- Element used in info command to get allocation token. --&gt;
-  &lt;element name="info"/&gt;
-
+  &lt;element name="info"&gt;
+    &lt;complexType&gt;
+      &lt;complexContent&gt;
+        &lt;restriction base="anyType" /&gt;
+      &lt;/complexContent&gt;
+    &lt;/complexType&gt;
+  &lt;/element&gt;
+  
   &lt;!-- Allocation Token used in transform
     commands and info response --&gt;
-  &lt;element
-    name="allocationToken"
-    type="allocationToken:allocationTokenType"/&gt;
-
+  &lt;element name="allocationToken" 
+    type="allocationToken:allocationTokenType" /&gt;
   &lt;simpleType name="allocationTokenType"&gt;
     &lt;restriction base="token"&gt;
-      &lt;minLength value="1"/&gt;
+      &lt;minLength value="1" /&gt;
     &lt;/restriction&gt;
   &lt;/simpleType&gt;
-
+  
 &lt;!-- End of schema. --&gt;
 &lt;/schema&gt;
 END</pre>
@@ -923,7 +925,7 @@ END</pre>
 </ol>
 <h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#Acknowledgements" id="Acknowledgements">Acknowledgements</a></h1>
 <p id="rfc.section.8.p.1">The authors wish to acknowledge the original concept for this draft and the efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</p>
-<p id="rfc.section.8.p.2">Special suggestions that have been incorporated into this document were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</p>
+<p id="rfc.section.8.p.2">Special suggestions that have been incorporated into this document were provided by Scott Hollenbeck, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</p>
 <h1 id="rfc.references"><a href="#rfc.references">9.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">9.1.</a> Normative References</h1>
 <table>
@@ -1073,6 +1075,14 @@ END</pre>
 <ol>
   <li>Updates based on the AD review by Adam Roach, that include: <ol><li>In "Abstract", set "query" and "transform" off in some way (e.g., using quotation marks)</li><li>In "Conventions Used in This Document", please update to use the boilerplate from RFC 8174.</li><li>Remove "allocationToken-1.0" is used as an abbreviation for "urn:ietf:params:xml:ns:allocationToken-1.0".</li><li>In "Allocation Token", change "The server MUST have the Allocation Token" to "The server MAY have the Allocation Token".</li><li>In "EPP &lt;check&gt; Command", change "This extension allow clients" to "This extension allows clients".</li><li>Use domains reserved by RFC 2026 for the examples.  The example domain "example.tld" was changed to "allocation.example" and the example domain "example2.tld" was changed to "allocation2.example".</li><li>In "EPP &lt;info&gt; Command", change "...the server MUST return an EPP error result code of 2303 object referencing the &lt;allocationToken:info&gt; element." to "...the server MUST return an EPP error result code of 2303."</li><li>In "EPP &lt;transfer&gt; Query Command", remove "the" before "[RFC5730]".</li><li>In "EPP &lt;transfer&gt; Command", change "If the Allocation Token does not apply to the object..." to "If the Allocation Token is invalid or not required for the object...".</li><li>In "XML Namespace", remove the sentence "The following URI assignment is requested of IANA:"</li><li>In "Security Considerations", change "An Allocation Token should is" to "An Allocation Token that is".  Also informatively cite RFC 4648 for the base64 reference.</li></ol></li>
   <li>Change "ietf:params:xml:ns:allocationToken-1.0" to "ietf:params:xml:schema:allocationToken-1.0" for the XML schema IANA registration.</li>
+</ol>
+<h1 id="rfc.appendix.A.15"><a href="#rfc.appendix.A.15">A.15.</a> <a href="#version-WG09to-WG10" id="version-WG09to-WG10">Change from REGEXT 09 to REGEXT 10</a></h1>
+<p/>
+
+<ol>
+  <li>Changed "auhorization" to "authorization" in the "EPP &lt;info&gt; Command" section.</li>
+  <li>Added 'If an object does not require an Allocation Token, the server MAY return the availability status as available (e.g., "avail" attribute is "1" or "true").' to the check response cases, based on feedback by Mirja Kuehlewind.</li>
+  <li>Changed the definition of the &lt;info&gt; element in the XML schema to only allow an empty element, based on IANA's expert review.</li>
 </ol>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>

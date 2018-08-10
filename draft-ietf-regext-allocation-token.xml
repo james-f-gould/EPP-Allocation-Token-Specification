@@ -43,7 +43,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-ietf-regext-allocation-token-09" ipr="trust200902">
+<rfc category="std" docName="draft-ietf-regext-allocation-token-10" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -99,7 +99,7 @@
       </address>
     </author>
 
-    <date day="3" month="August" year="2018"/>
+    <date day="10" month="August" year="2018"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -245,6 +245,7 @@ C:</epp>]]></artwork>
             then the server MUST return the availability status as available (e.g., "avail" attribute is "1" or "true").</t>
             <t>If an object requires an Allocation Token and the Allocation Token does not apply to the object or an object does not require an Allocation Token, 
             then the server SHOULD return the availability status as unavailable (e.g., "avail" attribute is "0" or "false").</t>
+            <t>If an object does not require an Allocation Token, the server MAY return the availability status as available (e.g., "avail" attribute is "1" or "true").</t>
           </list></t>
              
           <figure>
@@ -361,7 +362,7 @@ S:</epp>]]></artwork>
        receive the Allocation Token, but there is no Allocation Token
        associated with the object, the server MUST return an EPP error result code of
        2303.  The 
-       auhorization is subject to server policy.</t>
+       authorization is subject to server policy.</t>
 
        <figure>
             <preamble>Example &lt;info&gt; command with the allocationToken:info
@@ -602,36 +603,35 @@ C:</epp>]]></artwork>
         <artwork><![CDATA[
 BEGIN
 <?xml version="1.0" encoding="UTF-8"?>
-<schema
-  targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
-  xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
-  xmlns="http://www.w3.org/2001/XMLSchema"
-  elementFormDefault="qualified"
->
-
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+  xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0" 
+  targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0" 
+  elementFormDefault="qualified">
   <annotation>
-    <documentation>
-      Extensible Provisioning Protocol v1.0
+    <documentation>Extensible Provisioning Protocol v1.0
       Allocation
-      Token Extension.
-    </documentation>
+      Token Extension.</documentation>
   </annotation>
-
+  
   <!-- Element used in info command to get allocation token. -->
-  <element name="info"/>
-
+  <element name="info">
+    <complexType>
+      <complexContent>
+        <restriction base="anyType" />
+      </complexContent>
+    </complexType>
+  </element>
+  
   <!-- Allocation Token used in transform
     commands and info response -->
-  <element
-    name="allocationToken"
-    type="allocationToken:allocationTokenType"/>
-
+  <element name="allocationToken" 
+    type="allocationToken:allocationTokenType" />
   <simpleType name="allocationTokenType">
     <restriction base="token">
-      <minLength value="1"/>
+      <minLength value="1" />
     </restriction>
   </simpleType>
-
+  
 <!-- End of schema. -->
 </schema>
 END]]></artwork>
@@ -804,7 +804,7 @@ END]]></artwork>
       efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</t>
 
       <t>Special suggestions that have been incorporated into this document
-      were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</t>
+      were provided by Scott Hollenbeck, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</t>
 
     </section>
 
@@ -998,7 +998,15 @@ marks)</t>
         </list></t>
         <t>Change "ietf:params:xml:ns:allocationToken-1.0" to "ietf:params:xml:schema:allocationToken-1.0" for the XML schema IANA registration.</t>
       </list></t>    
-     </section>
+    </section>
+    <section title="Change from REGEXT 09 to REGEXT 10" anchor="version-WG09to-WG10">
+      <t><list style="numbers">
+        <t>Changed "auhorization" to "authorization" in the "EPP &lt;info&gt; Command" section.</t>
+        <t>Added 'If an object does not require an Allocation Token, the server MAY return the availability status as available (e.g., "avail" attribute is "1" or "true").' to the check response cases, based on feedback by Mirja Kuehlewind.</t>
+        <t>Changed the definition of the &lt;info&gt; element in the XML schema to only allow an empty element, based on IANA's expert review.</t>
+      </list></t>    
+    </section>
+     
    </section>
 
   </back>

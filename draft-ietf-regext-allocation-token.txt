@@ -5,13 +5,13 @@
 Network Working Group                                           J. Gould
 Internet-Draft                                            VeriSign, Inc.
 Intended status: Standards Track                                K. Feher
-Expires: February 4, 2019                                        Neustar
-                                                          August 3, 2018
+Expires: February 11, 2019                                       Neustar
+                                                         August 10, 2018
 
 
   Allocation Token Extension for the Extensible Provisioning Protocol
                                  (EPP)
-                 draft-ietf-regext-allocation-token-09
+                 draft-ietf-regext-allocation-token-10
 
 Abstract
 
@@ -37,7 +37,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on February 4, 2019.
+   This Internet-Draft will expire on February 11, 2019.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 1]
+Gould & Feher           Expires February 11, 2019               [Page 1]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 2]
+Gould & Feher           Expires February 11, 2019               [Page 2]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -118,7 +118,8 @@ Internet-Draft               allocationToken                 August 2018
      A.12. Change from REGEXT 06 to REGEXT 07  . . . . . . . . . . .  22
      A.13. Change from REGEXT 07 to REGEXT 08  . . . . . . . . . . .  22
      A.14. Change from REGEXT 08 to REGEXT 09  . . . . . . . . . . .  23
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  23
+     A.15. Change from REGEXT 09 to REGEXT 10  . . . . . . . . . . .  23
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  24
 
 1.  Introduction
 
@@ -164,8 +165,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-
-Gould & Feher           Expires February 4, 2019                [Page 3]
+Gould & Feher           Expires February 11, 2019               [Page 3]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -221,7 +221,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 4]
+Gould & Feher           Expires February 11, 2019               [Page 4]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -277,13 +277,16 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 5]
+Gould & Feher           Expires February 11, 2019               [Page 5]
 
 Internet-Draft               allocationToken                 August 2018
 
 
        availability status as unavailable (e.g., "avail" attribute is
        "0" or "false").
+   3.  If an object does not require an Allocation Token, the server MAY
+       return the availability status as available (e.g., "avail"
+       attribute is "1" or "true").
 
    Example <check> domain response for a <check> command using the
    <allocationToken:allocationToken> extension:
@@ -330,10 +333,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-
-
-
-Gould & Feher           Expires February 4, 2019                [Page 6]
+Gould & Feher           Expires February 11, 2019               [Page 6]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -389,7 +389,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 7]
+Gould & Feher           Expires February 11, 2019               [Page 7]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -445,13 +445,13 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 8]
+Gould & Feher           Expires February 11, 2019               [Page 8]
 
 Internet-Draft               allocationToken                 August 2018
 
 
    the object, the server MUST return an EPP error result code of 2303.
-   The auhorization is subject to server policy.
+   The authorization is subject to server policy.
 
    Example <info> command with the allocationToken:info extension for
    the allocation.example domain name:
@@ -501,7 +501,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019                [Page 9]
+Gould & Feher           Expires February 11, 2019               [Page 9]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -557,7 +557,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 10]
+Gould & Feher           Expires February 11, 2019              [Page 10]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -613,7 +613,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 11]
+Gould & Feher           Expires February 11, 2019              [Page 11]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -669,7 +669,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 12]
+Gould & Feher           Expires February 11, 2019              [Page 12]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -725,7 +725,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 13]
+Gould & Feher           Expires February 11, 2019              [Page 13]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -745,33 +745,32 @@ Internet-Draft               allocationToken                 August 2018
 
    BEGIN
    <?xml version="1.0" encoding="UTF-8"?>
-   <schema
-     targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
+   <schema xmlns="http://www.w3.org/2001/XMLSchema"
      xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
-     xmlns="http://www.w3.org/2001/XMLSchema"
-     elementFormDefault="qualified"
-   >
-
+     targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
+     elementFormDefault="qualified">
      <annotation>
-       <documentation>
-         Extensible Provisioning Protocol v1.0
+       <documentation>Extensible Provisioning Protocol v1.0
          Allocation
-         Token Extension.
-       </documentation>
+         Token Extension.</documentation>
      </annotation>
 
      <!-- Element used in info command to get allocation token. -->
-     <element name="info"/>
+     <element name="info">
+       <complexType>
+         <complexContent>
+           <restriction base="anyType" />
+         </complexContent>
+       </complexType>
+     </element>
 
      <!-- Allocation Token used in transform
        commands and info response -->
-     <element
-       name="allocationToken"
-       type="allocationToken:allocationTokenType"/>
-
+     <element name="allocationToken"
+       type="allocationToken:allocationTokenType" />
      <simpleType name="allocationTokenType">
        <restriction base="token">
-         <minLength value="1"/>
+         <minLength value="1" />
        </restriction>
      </simpleType>
 
@@ -781,7 +780,8 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 14]
+
+Gould & Feher           Expires February 11, 2019              [Page 14]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -837,7 +837,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 15]
+Gould & Feher           Expires February 11, 2019              [Page 15]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -893,7 +893,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 16]
+Gould & Feher           Expires February 11, 2019              [Page 16]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -949,7 +949,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 17]
+Gould & Feher           Expires February 11, 2019              [Page 17]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -988,8 +988,8 @@ Internet-Draft               allocationToken                 August 2018
    and Sharon Wodjenski.
 
    Special suggestions that have been incorporated into this document
-   were provided by Scott Hollenbeck, Rubens Kuhl, Alexander Mayrhofer,
-   Patrick Mevzek, and Adam Roach.
+   were provided by Scott Hollenbeck, Mirja Kuehlewind, Rubens Kuhl,
+   Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.
 
 9.  References
 
@@ -1005,7 +1005,7 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 18]
+Gould & Feher           Expires February 11, 2019              [Page 18]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -1061,7 +1061,7 @@ A.1.  Change from 00 to 01
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 19]
+Gould & Feher           Expires February 11, 2019              [Page 19]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -1117,7 +1117,7 @@ A.10.  Change from REGEXT 04 to REGEXT 05
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 20]
+Gould & Feher           Expires February 11, 2019              [Page 20]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -1173,7 +1173,7 @@ A.11.  Change from REGEXT 05 to REGEXT 06
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 21]
+Gould & Feher           Expires February 11, 2019              [Page 21]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -1229,7 +1229,7 @@ A.13.  Change from REGEXT 07 to REGEXT 08
 
 
 
-Gould & Feher           Expires February 4, 2019               [Page 22]
+Gould & Feher           Expires February 11, 2019              [Page 22]
 
 Internet-Draft               allocationToken                 August 2018
 
@@ -1271,6 +1271,25 @@ A.14.  Change from REGEXT 08 to REGEXT 09
        "ietf:params:xml:schema:allocationToken-1.0" for the XML schema
        IANA registration.
 
+A.15.  Change from REGEXT 09 to REGEXT 10
+
+   1.  Changed "auhorization" to "authorization" in the "EPP <info>
+       Command" section.
+   2.  Added 'If an object does not require an Allocation Token, the
+       server MAY return the availability status as available (e.g.,
+       "avail" attribute is "1" or "true").' to the check response
+       cases, based on feedback by Mirja Kuehlewind.
+   3.  Changed the definition of the <info> element in the XML schema to
+       only allow an empty element, based on IANA's expert review.
+
+
+
+
+Gould & Feher           Expires February 11, 2019              [Page 23]
+
+Internet-Draft               allocationToken                 August 2018
+
+
 Authors' Addresses
 
    James Gould
@@ -1281,13 +1300,6 @@ Authors' Addresses
 
    Email: jgould@verisign.com
    URI:   http://www.verisigninc.com
-
-
-
-
-Gould & Feher           Expires February 4, 2019               [Page 23]
-
-Internet-Draft               allocationToken                 August 2018
 
 
    Kal Feher
@@ -1329,16 +1341,4 @@ Internet-Draft               allocationToken                 August 2018
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-Gould & Feher           Expires February 4, 2019               [Page 24]
+Gould & Feher           Expires February 11, 2019              [Page 24]
