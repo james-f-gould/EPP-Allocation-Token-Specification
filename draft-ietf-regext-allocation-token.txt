@@ -94,10 +94,9 @@ Table of Contents
    9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  19
      9.1.  Normative References  . . . . . . . . . . . . . . . . . .  19
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  20
-     9.3.  URIs  . . . . . . . . . . . . . . . . . . . . . . . . . .  20
    Appendix A.  Change History . . . . . . . . . . . . . . . . . . .  20
      A.1.  Change from 00 to 01  . . . . . . . . . . . . . . . . . .  20
-     A.2.  Change from 01 to 02  . . . . . . . . . . . . . . . . . .  21
+     A.2.  Change from 01 to 02  . . . . . . . . . . . . . . . . . .  20
      A.3.  Change from 02 to 03  . . . . . . . . . . . . . . . . . .  21
      A.4.  Change from 03 to 04  . . . . . . . . . . . . . . . . . .  21
      A.5.  Change from 04 to REGEXT 00 . . . . . . . . . . . . . . .  21
@@ -106,6 +105,7 @@ Table of Contents
      A.8.  Change from REGEXT 02 to REGEXT 03  . . . . . . . . . . .  21
      A.9.  Change from REGEXT 03 to REGEXT 04  . . . . . . . . . . .  21
      A.10. Change from REGEXT 04 to REGEXT 05  . . . . . . . . . . .  21
+     A.11. Change from REGEXT 05 to REGEXT 06  . . . . . . . . . . .  22
 
 
 
@@ -114,7 +114,6 @@ Gould & Feher           Expires February 22, 2019               [Page 2]
 Internet-Draft               allocationToken                 August 2018
 
 
-     A.11. Change from REGEXT 05 to REGEXT 06  . . . . . . . . . . .  22
      A.12. Change from REGEXT 06 to REGEXT 07  . . . . . . . . . . .  23
      A.13. Change from REGEXT 07 to REGEXT 08  . . . . . . . . . . .  23
      A.14. Change from REGEXT 08 to REGEXT 09  . . . . . . . . . . .  24
@@ -153,7 +152,7 @@ Internet-Draft               allocationToken                 August 2018
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
    "OPTIONAL" in this document are to be interpreted as described in BCP
-   14 [1] [RFC2119] [RFC8174] when, and only when, they appear in all
+   14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
    XML is case sensitive.  Unless stated otherwise, XML specifications
@@ -161,7 +160,8 @@ Internet-Draft               allocationToken                 August 2018
    character case presented in order to develop a conforming
    implementation.
 
-
+   In examples, "C:" represents lines sent by a protocol client and "S:"
+   represents lines returned by a protocol server.  Indentation and
 
 
 
@@ -170,10 +170,8 @@ Gould & Feher           Expires February 22, 2019               [Page 3]
 Internet-Draft               allocationToken                 August 2018
 
 
-   In examples, "C:" represents lines sent by a protocol client and "S:"
-   represents lines returned by a protocol server.  Indentation and
    white space in the examples are provided only to illustrate element
-   relationships and are NOT REQUIRED in the protocol.
+   relationships and are not REQUIRED in the protocol.
 
    The XML namespace prefix "allocationToken" is used for the namespace
    "urn:ietf:params:xml:ns:allocationToken-1.0", but implementations
@@ -216,6 +214,8 @@ Internet-Draft               allocationToken                 August 2018
    of the object.  The Allocation Token is not managed by the client,
    but is validated by the server to authorize assigning the initial
    sponsoring client of the object.
+
+
 
 
 
@@ -1098,10 +1098,6 @@ Internet-Draft               allocationToken                 August 2018
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-9.3.  URIs
-
-   [1] https://tools.ietf.org/html/bcp14
-
 Appendix A.  Change History
 
 A.1.  Change from 00 to 01
@@ -1109,6 +1105,10 @@ A.1.  Change from 00 to 01
    1.  Amended XML Namespace section of IANA Considerations, added EPP
        Extension Registry section.
    2.  Moved Change History to the back section as an Appendix.
+
+A.2.  Change from 01 to 02
+
+   1.  Ping update.
 
 
 
@@ -1121,10 +1121,6 @@ Gould & Feher           Expires February 22, 2019              [Page 20]
 
 Internet-Draft               allocationToken                 August 2018
 
-
-A.2.  Change from 01 to 02
-
-   1.  Ping update.
 
 A.3.  Change from 02 to 03
 
@@ -1169,6 +1165,10 @@ A.10.  Change from REGEXT 04 to REGEXT 05
            authorized client for passing out-of-band to a client that
            uses it with an EPP transform command" to clarify who the two
            separate clients are.
+       5.  Removed an unneeded ":" from the EPP <transfer> Command and
+           EPP <update> Command sections.
+
+
 
 
 
@@ -1177,9 +1177,6 @@ Gould & Feher           Expires February 22, 2019              [Page 21]
 
 Internet-Draft               allocationToken                 August 2018
 
-
-       5.  Removed an unneeded ":" from the EPP <transfer> Command and
-           EPP <update> Command sections.
 
 A.11.  Change from REGEXT 05 to REGEXT 06
 
@@ -1226,6 +1223,9 @@ A.11.  Change from REGEXT 05 to REGEXT 06
             in the "EPP <info> Command" section.
        14.  Removed the "that identifies the extension namespace", the
             ", defined in...", the Allocation Token links from the error
+            response sentences, and the "object referencing the
+            <allocationToken:info> element" in the "EPP <info> Command"
+            section.
 
 
 
@@ -1234,9 +1234,6 @@ Gould & Feher           Expires February 22, 2019              [Page 22]
 Internet-Draft               allocationToken                 August 2018
 
 
-            response sentences, and the "object referencing the
-            <allocationToken:info> element" in the "EPP <info> Command"
-            section.
        15.  Added "The authorization is subject to server policy." to
             the "EPP <info> Command" section.
        16.  Replace "or <transfer> response>" with "or <transfer> query
@@ -1285,6 +1282,9 @@ A.13.  Change from REGEXT 07 to REGEXT 08
 
 
 
+
+
+
 Gould & Feher           Expires February 22, 2019              [Page 23]
 
 Internet-Draft               allocationToken                 August 2018
@@ -1314,7 +1314,7 @@ A.14.  Change from REGEXT 08 to REGEXT 09
             <allocationToken:info> element." to "...the server MUST
             return an EPP error result code of 2303."
        8.   In "EPP <transfer> Query Command", remove "the" before
-            "[RFC5730]".
+            "RFC5730".
        9.   In "EPP <transfer> Command", change "If the Allocation Token
             does not apply to the object..." to "If the Allocation Token
             is invalid or not required for the object...".
@@ -1355,7 +1355,9 @@ Internet-Draft               allocationToken                 August 2018
        "Security Considerations" section, based on feedback from Eric
        Rescoria.
    6.  Added the missing "urn:" prefix with the IANA URI registrations.
-   7.  Updates based on review by Benjamin Kaduk, that include:
+   7.  The URL for the BCP 14 was removed based on feedback from Alissa
+       Cooper.
+   8.  Updates based on review by Benjamin Kaduk, that include:
 
        1.  Added the second paragraph to the "Allocation Token" section
            to describe the difference (motivation) of using the
@@ -1370,11 +1372,11 @@ Internet-Draft               allocationToken                 August 2018
            validation, and the server determines if the supplied
            Allocation Token is one supported by the server."
        4.  Changed the "Indentation and white space in the examples are
-           provided only to illustrate element relationships and are NOT
+           provided only to illustrate element relationships and are not
            REQUIRED in the protocol." sentence in the "Conventions Used
            in This Document" section to "Indentation and white space in
            the examples are provided only to illustrate element
-           relationships and are NOT REQUIRED in the protocol."
+           relationships and are not REQUIRED in the protocol."
        5.  Changed the "Authorized clients MAY retrieve..." sentence in
            the "EPP <info> Command" section.
        6.  Changed the "If the query was successful..." sentence in the
@@ -1386,6 +1388,20 @@ Internet-Draft               allocationToken                 August 2018
 
 Authors' Addresses
 
+
+
+
+
+
+
+
+
+
+Gould & Feher           Expires February 22, 2019              [Page 25]
+
+Internet-Draft               allocationToken                 August 2018
+
+
    James Gould
    VeriSign, Inc.
    12061 Bluemont Way
@@ -1396,12 +1412,6 @@ Authors' Addresses
    URI:   http://www.verisigninc.com
 
 
-
-Gould & Feher           Expires February 22, 2019              [Page 25]
-
-Internet-Draft               allocationToken                 August 2018
-
-
    Kal Feher
    Neustar
    lvl 8/10 Queens Road
@@ -1410,16 +1420,6 @@ Internet-Draft               allocationToken                 August 2018
 
    Email: ietf@feherfamily.org
    URI:   http://www.neustar.biz
-
-
-
-
-
-
-
-
-
-
 
 
 

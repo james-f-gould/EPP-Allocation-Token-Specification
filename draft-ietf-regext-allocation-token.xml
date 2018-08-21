@@ -11,7 +11,6 @@
 <!ENTITY RFC7942 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7942.xml">
 <!ENTITY RFC7451 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.7451.xml">
 <!ENTITY RFC8174 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml">
-<!ENTITY BCP14 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml">
 <!ENTITY I-D.narten-iana-considerations-rfc2434bis SYSTEM "http://xml.resource.org/public/rfc/bibxml3/reference.I-D.narten-iana-considerations-rfc2434bis.xml">
 ]>
 <?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
@@ -137,7 +136,7 @@
         <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
       NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
       "MAY", and "OPTIONAL" in this document are to be interpreted as
-      described in <eref target="https://tools.ietf.org/html/bcp14">BCP 14</eref> <xref target="RFC2119"/> <xref target="RFC8174"/> 
+      described in BCP 14 <xref target="RFC2119"/> <xref target="RFC8174"/> 
       when, and only when, they
       appear in all capitals, as shown here.</t>
 
@@ -148,7 +147,7 @@
 
         <t>In examples, "C:" represents lines sent by a protocol client and "S:" represents lines returned by a protocol server.
         Indentation and white space in the examples are provided only to 
-        illustrate element relationships and are NOT REQUIRED in the protocol.</t>
+        illustrate element relationships and are not REQUIRED in the protocol.</t>
 
         <t>The XML namespace prefix "allocationToken" is used for the namespace
    "urn:ietf:params:xml:ns:allocationToken-1.0", but implementations MUST NOT depend on
@@ -1016,7 +1015,7 @@ marks)</t>
             <t>In "EPP &lt;check&gt; Command", change "This extension allow clients" to "This extension allows clients".</t>
             <t>Use domains reserved by RFC 2026 for the examples.  The example domain "example.tld" was changed to "allocation.example" and the example domain "example2.tld" was changed to "allocation2.example".</t>
             <t>In "EPP &lt;info&gt; Command", change "...the server MUST return an EPP error result code of 2303 object referencing the &lt;allocationToken:info&gt; element." to "...the server MUST return an EPP error result code of 2303."</t>
-   			<t>In "EPP &lt;transfer&gt; Query Command", remove "the" before "[RFC5730]".</t>
+   			<t>In "EPP &lt;transfer&gt; Query Command", remove "the" before "RFC5730".</t>
    			<t>In "EPP &lt;transfer&gt; Command", change "If the Allocation Token does not apply to the object..." to "If the Allocation Token is invalid or not required for the object...".</t>
    			<t>In "XML Namespace", remove the sentence "The following URI assignment is requested of IANA:"</t>
    			<t>In "Security Considerations", change "An Allocation Token should is" to "An Allocation Token that is".  Also informatively cite RFC 4648 for the base64 reference.</t>
@@ -1032,6 +1031,7 @@ marks)</t>
         <t>Added normative language to the storage and transport of the Allocation Token, in the "Security Considerations" section, based on feedback from Eric Rescoria.</t>
         <t>Changed "The definition of the Allocation Token is defined outside of this mapping" to "The definition of the Allocation Token SHOULD be defined outside of this mapping", in the "Security Considerations" section, based on feedback from Eric Rescoria.</t>
         <t>Added the missing "urn:" prefix with the IANA URI registrations.</t>
+        <t>The URL for the BCP 14 was removed based on feedback from Alissa Cooper.</t> 
         <t>Updates based on review by Benjamin Kaduk, that include:
           <list style="numbers">
             <t>Added the second paragraph to the "Allocation Token" section to describe the difference (motivation) of using the Allocation Token versus the EPP RFC authorization mechanism.</t>
@@ -1040,10 +1040,10 @@ marks)</t>
             sentence in the "Introduction" section to "Clients pass an Allocation Token to the server for validation, 
             and the server determines if the supplied Allocation Token is one supported by the server."</t>
             <t>Changed the "Indentation and white space in the examples are provided 
-               only to illustrate element relationships and are NOT REQUIRED in the protocol." sentence 
+               only to illustrate element relationships and are not REQUIRED in the protocol." sentence 
                in the "Conventions Used in This Document" section to 
                "Indentation and white space in the examples are provided only to illustrate element 
-               relationships and are NOT REQUIRED in the protocol."</t>
+               relationships and are not REQUIRED in the protocol."</t>
             <t>Changed the "Authorized clients MAY retrieve..." sentence in the "EPP &lt;info&gt; Command" section.</t>
             <t>Changed the "If the query was successful..." sentence in the "EPP &lt;info&gt; Command" section.</t>
             <t>Added "supplied" to the "If the supplied Allocation Token passed..." sentence in the "Allocation Token" section.</t>
