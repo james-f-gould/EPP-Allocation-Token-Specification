@@ -99,7 +99,7 @@
       </address>
     </author>
 
-    <date day="10" month="August" year="2018"/>
+    <date day="21" month="August" year="2018"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -126,11 +126,10 @@
       auction Allocation Token, allocating a registration based on a founders Allocation Token, 
       and allocating an existing domain name held by the server or by a different sponsoring 
       client based on an Allocation Token passed with a transfer command.</t>
-      <t>A client MUST pass an Allocation Token known to the
-      server to be authorized to use one of the supported EPP transform commands.
-      It is up to server
-      policy which EPP transform commands and which objects require the
-      Allocation Token.  The Allocation Token MAY be returned to an
+      <t>Clients pass an Allocation Token to the server for validation, 
+      and the server determines if the supplied Allocation Token is one supported by the server. 
+      It is up to server policy which EPP transform commands and which objects require 
+      the Allocation Token.  The Allocation Token MAY be returned to an
       authorized client for passing out-of-band to a client that
       uses it with an EPP transform command.</t>
 
@@ -148,15 +147,21 @@
         implementation.</t>
 
         <t>In examples, "C:" represents lines sent by a protocol client and "S:" represents lines returned by a protocol server.
-        Indentation and white space in examples are provided only to illustrate element relationships
-        and are not a REQUIRED feature of this protocol.
-        </t>
+        Indentation and white space in the examples are provided only to 
+        illustrate element relationships and are NOT REQUIRED in the protocol.</t>
 
         <t>The XML namespace prefix "allocationToken" is used for the namespace
    "urn:ietf:params:xml:ns:allocationToken-1.0", but implementations MUST NOT depend on
         it and instead employ
         a proper namespace-aware XML parser and serializer to interpret and
         output the XML documents.</t>
+        
+        <t>The "abc123" token value is used as a placeholder value in the examples.  The server MUST 
+        support token values that follow the <xref target="securityConsiderations">Security Considerations</xref> section.</t>
+        
+        <t>The domain object attribute values, including the "2fooBAR" &lt;domain:pw&gt; value, in the examples are 
+        provided for illustration purposes only.  Refer to <xref target="RFC5731"/> for 
+        details on the domain object attributes.</t> 
       </section>
     </section>
 
@@ -174,9 +179,20 @@
         Allocation Token passed by the client to authorize the allocation of
         the object.  The &lt;allocationToken:allocationToken&gt; element
         is used for all of the supported EPP commands as well as the
-        info response.  If the Allocation Token passed to the server does not 
+        info response.  If the supplied Allocation Token passed to the server does not 
         apply to the object, the server MUST
         return an EPP error result code of 2201.</t>
+        
+        <t>Authorization information, like what is defined in the <xref
+        target="RFC5731">EPP domain name mapping</xref>, 
+        is associated with objects to facilitate transfer operations.  
+        The authorization information is assigned when an object is created.  
+        The Allocation Token and the authorization information are both credentials, 
+        but used for different purposes and used in different ways.  The Allocation Token is 
+        used to facilitate the allocation of an object instead of transferring the 
+        sponsorship of the object.  The Allocation Token is not managed by the client, 
+        but is validated by the server to authorize assigning the initial 
+        sponsoring client of the object.</t>
 
 
        <figure>
@@ -353,7 +369,12 @@ S:</epp>]]></artwork>
         &lt;info&gt; command of an object mapping like <xref target="RFC5731"/>.</t>
 
        <t>The EPP &lt;info&gt; command allows a client to request information associated with an
-       existing object.  Authorized clients MAY retrieve the <xref target="allocationToken">Allocation Token</xref> along
+       existing object.  
+       Authorized clients MAY retrieve the <xref target="allocationToken">Allocation Token</xref> along with the 
+       other object information by supplying the &lt;allocationToken:info&gt; element in the command.
+
+       
+       Authorized clients MAY retrieve the <xref target="allocationToken">Allocation Token</xref> along
        with the other object information using the &lt;allocationToken:info&gt; element.  The &lt;allocationToken:info&gt;
        element is an empty element that serves as a marker to the server to
        return the &lt;allocationToken:allocationToken&gt; element in the info response.  If the client is not
@@ -390,9 +411,11 @@ C:  </command>
 C:</epp>]]></artwork>
        </figure>
 
-          <t>If the query was successful, the server replies with an
-          &lt;allocationToken:allocationToken&gt; element, as described in
-          <xref target="allocationToken"/>.</t>
+          <t>
+          If the query was successful, the server replies with an &lt;allocationToken:allocationToken&gt; element 
+          along with the regular EPP &lt;resData&gt;.  The &lt;allocationToken:allocationToken&gt; element is 
+          described in <xref target="allocationToken"/>.
+          </t>
 
           <figure>
             <preamble>Example &lt;info&gt; domain response using the
@@ -608,9 +631,10 @@ BEGIN
   targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0" 
   elementFormDefault="qualified">
   <annotation>
-    <documentation>Extensible Provisioning Protocol v1.0
-      Allocation
-      Token Extension.</documentation>
+    <documentation>
+      Extensible Provisioning Protocol v1.0
+      Allocation Token Extension
+    </documentation>
   </annotation>
   
   <!-- Element used in info command to get allocation token. -->
@@ -650,7 +674,7 @@ END]]></artwork>
          <t>Registration request for the allocationToken namespace:</t>
          
          <t><list>
-         <t>URI: ietf:params:xml:ns:allocationToken-1.0</t>
+         <t>URI: urn:ietf:params:xml:ns:allocationToken-1.0</t>
          
          <t>Registrant Contact: IESG</t>
           
@@ -660,7 +684,7 @@ END]]></artwork>
          <t>Registration request for the allocationToken XML schema:</t>
          
          <t><list>
-         <t>URI: ietf:params:xml:schema:allocationToken-1.0</t>
+         <t>URI: urn:ietf:params:xml:schema:allocationToken-1.0</t>
          
          <t>Registrant Contact: IESG</t>
           
@@ -777,18 +801,18 @@ END]]></artwork>
     </section>
 
 
-    <section anchor="Security" title="Security Considerations">
+    <section anchor="securityConsiderations" title="Security Considerations">
       <t>The mapping described in this document does not provide any
       security services beyond those described by <xref
       target="RFC5730">EPP</xref> and protocol layers used by EPP. The security
       considerations described in these other specifications apply to this
       specification as well.</t>  
       <t>The mapping acts as a conduit for the passing of Allocation Tokens 
-      between a client and a server.  The definition of the Allocation Token 
-      is defined outside of this mapping.  The following are security considerations 
+      between a client and a server.  The definition of the Allocation Token SHOULD be defined outside of this mapping.  
+      The following are security considerations 
       in the definition and use of an Allocation Token:</t>
       <t><list style="numbers">
-        <t>An Allocation Token should be considered secret information by the client and should be protected at rest and in transit.</t>
+        <t>An Allocation Token should be considered secret information by the client and SHOULD be protected at rest and MUST be protected in transit.</t>
         <t>An Allocation Token should be single use, meaning it should be unique per object and per allocation operation.</t>
         <t>An Allocation Token should have a limited life with some form of expiry in the Allocation Token if generated by a trusted 3rd third party,  
         or with a server-side expiry if generated by the server.</t>
@@ -804,7 +828,8 @@ END]]></artwork>
       efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</t>
 
       <t>Special suggestions that have been incorporated into this document
-      were provided by Scott Hollenbeck, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, and Adam Roach.</t>
+      were provided by Scott Hollenbeck, Benjamin Kaduk, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer, 
+      Patrick Mevzek, Eric Rescoria, and Adam Roach.</t>
 
     </section>
 
@@ -1004,6 +1029,27 @@ marks)</t>
         <t>Changed "auhorization" to "authorization" in the "EPP &lt;info&gt; Command" section.</t>
         <t>Added 'If an object does not require an Allocation Token, the server MAY return the availability status as available (e.g., "avail" attribute is "1" or "true").' to the check response cases, based on feedback by Mirja Kuehlewind.</t>
         <t>Changed the definition of the &lt;info&gt; element in the XML schema to only allow an empty element, based on IANA's expert review.</t>
+        <t>Added normative language to the storage and transport of the Allocation Token, in the "Security Considerations" section, based on feedback from Eric Rescoria.</t>
+        <t>Changed "The definition of the Allocation Token is defined outside of this mapping" to "The definition of the Allocation Token SHOULD be defined outside of this mapping", in the "Security Considerations" section, based on feedback from Eric Rescoria.</t>
+        <t>Added the missing "urn:" prefix with the IANA URI registrations.</t>
+        <t>Updates based on review by Benjamin Kaduk, that include:
+          <list style="numbers">
+            <t>Added the second paragraph to the "Allocation Token" section to describe the difference (motivation) of using the Allocation Token versus the EPP RFC authorization mechanism.</t>
+            <t>Added a paragraph to the "Conventions Used in This Document" section for the use of the "abc123" token value and the use of domain object "2fooBAR" password value in the examples.</t>
+            <t>Changed the "A client MUST pass an Allocation Token known to the server to be authorized to use one of the supported EPP transform commands." 
+            sentence in the "Introduction" section to "Clients pass an Allocation Token to the server for validation, 
+            and the server determines if the supplied Allocation Token is one supported by the server."</t>
+            <t>Changed the "Indentation and white space in the examples are provided 
+               only to illustrate element relationships and are NOT REQUIRED in the protocol." sentence 
+               in the "Conventions Used in This Document" section to 
+               "Indentation and white space in the examples are provided only to illustrate element 
+               relationships and are NOT REQUIRED in the protocol."</t>
+            <t>Changed the "Authorized clients MAY retrieve..." sentence in the "EPP &lt;info&gt; Command" section.</t>
+            <t>Changed the "If the query was successful..." sentence in the "EPP &lt;info&gt; Command" section.</t>
+            <t>Added "supplied" to the "If the supplied Allocation Token passed..." sentence in the "Allocation Token" section.</t>
+            <t>Removed an extra newline in the &lt;annotation&gt; element in the "Allocation Token Extension Schema" section.</t>
+          </list>
+        </t>
       </list></t>    
     </section>
      

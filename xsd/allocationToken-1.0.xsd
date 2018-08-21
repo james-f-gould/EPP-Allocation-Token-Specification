@@ -4,9 +4,10 @@
   targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0" 
   elementFormDefault="qualified">
   <annotation>
-    <documentation>Extensible Provisioning Protocol v1.0
-      Allocation
-      Token Extension.</documentation>
+    <documentation>
+      Extensible Provisioning Protocol v1.0
+      Allocation Token Extension
+    </documentation>
   </annotation>
   
   <!-- Element used in info command to get allocation token. -->
@@ -20,7 +21,8 @@
   
   <!-- Allocation Token used in transform
     commands and info response -->
-  <element name="allocationToken" type="allocationToken:allocationTokenType" />
+  <element name="allocationToken" 
+    type="allocationToken:allocationTokenType" />
   <simpleType name="allocationTokenType">
     <restriction base="token">
       <minLength value="1" />
