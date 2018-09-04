@@ -42,7 +42,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-ietf-regext-allocation-token-10" ipr="trust200902">
+<rfc category="std" docName="draft-ietf-regext-allocation-token-11" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -98,7 +98,7 @@
       </address>
     </author>
 
-    <date day="21" month="August" year="2018"/>
+    <date day="4" month="September" year="2018"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -373,8 +373,7 @@ S:</epp>]]></artwork>
        other object information by supplying the &lt;allocationToken:info&gt; element in the command.
 
        
-       Authorized clients MAY retrieve the <xref target="allocationToken">Allocation Token</xref> along
-       with the other object information using the &lt;allocationToken:info&gt; element.  The &lt;allocationToken:info&gt;
+       The &lt;allocationToken:info&gt;
        element is an empty element that serves as a marker to the server to
        return the &lt;allocationToken:allocationToken&gt; element in the info response.  If the client is not
        authorized to receive the Allocation Token, the server MUST
@@ -1052,6 +1051,12 @@ marks)</t>
         </t>
       </list></t>    
     </section>
+    <section title="Change from REGEXT 10 to REGEXT 11" anchor="version-WG10-to-WG11">
+      <t><list style="numbers">
+        <t>Removed the old duplicate "Authorized clients MAY retrieve..." sentence from section 3.1.2 "EPP &lt;info&gt; Command".</t>
+      </list></t>    
+    </section>
+    
      
    </section>
 
