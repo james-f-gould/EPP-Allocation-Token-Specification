@@ -421,6 +421,7 @@
 <link href="#rfc.appendix.A.14" rel="Chapter" title="A.14 Change from REGEXT 08 to REGEXT 09"/>
 <link href="#rfc.appendix.A.15" rel="Chapter" title="A.15 Change from REGEXT 09 to REGEXT 10"/>
 <link href="#rfc.appendix.A.16" rel="Chapter" title="A.16 Change from REGEXT 10 to REGEXT 11"/>
+<link href="#rfc.appendix.A.17" rel="Chapter" title="A.17 Change from REGEXT 11 to REGEXT 12"/>
 <link href="#rfc.authors" rel="Chapter"/>
 
 
@@ -428,8 +429,8 @@
   <link rel="schema.dct" href="http://purl.org/dc/terms/" />
 
   <meta name="dct.creator" content="Gould, J. and K. Feher" />
-  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-regext-allocation-token-11" />
-  <meta name="dct.issued" scheme="ISO8601" content="2018-9-4" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-regext-allocation-token-12" />
+  <meta name="dct.issued" scheme="ISO8601" content="2018-9-28" />
   <meta name="dct.abstract" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an Allocation Token in &quot;query&quot; and &quot;transform&quot; commands.  The Allocation Token is used as a credential that authorizes a client to request the allocation of a specific object from the server, using one of the EPP transform commands including create and transfer." />
   <meta name="description" content="This document describes an Extensible Provisioning Protocol (EPP) extension for including an Allocation Token in &quot;query&quot; and &quot;transform&quot; commands.  The Allocation Token is used as a credential that authorizes a client to request the allocation of a specific object from the server, using one of the EPP transform commands including create and transfer." />
 
@@ -453,12 +454,12 @@
   <td class="right">K. Feher</td>
 </tr>
 <tr>
-  <td class="left">Expires: March 8, 2019</td>
+  <td class="left">Expires: April 1, 2019</td>
   <td class="right">Neustar</td>
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">September 4, 2018</td>
+  <td class="right">September 28, 2018</td>
 </tr>
 
     	
@@ -466,7 +467,7 @@
   </table>
 
   <p class="title">Allocation Token Extension for the Extensible Provisioning Protocol (EPP)<br />
-  <span class="filename">draft-ietf-regext-allocation-token-11</span></p>
+  <span class="filename">draft-ietf-regext-allocation-token-12</span></p>
   
   <h1 id="rfc.abstract">
   <a href="#rfc.abstract">Abstract</a>
@@ -478,7 +479,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on March 8, 2019.</p>
+<p>This Internet-Draft will expire on April 1, 2019.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -537,6 +538,7 @@
 <li>A.14.   <a href="#rfc.appendix.A.14">Change from REGEXT 08 to REGEXT 09</a></li>
 <li>A.15.   <a href="#rfc.appendix.A.15">Change from REGEXT 09 to REGEXT 10</a></li>
 <li>A.16.   <a href="#rfc.appendix.A.16">Change from REGEXT 10 to REGEXT 11</a></li>
+<li>A.17.   <a href="#rfc.appendix.A.17">Change from REGEXT 11 to REGEXT 12</a></li>
 </ul><li><a href="#rfc.authors">Authors' Addresses</a></li>
 
 
@@ -597,7 +599,7 @@ C:&lt;/epp&gt;</pre>
 
 <ol>
   <li>If an object requires an Allocation Token and the Allocation Token does apply to the object, then the server MUST return the availability status as available (e.g., "avail" attribute is "1" or "true").</li>
-  <li>If an object requires an Allocation Token and the Allocation Token does not apply to the object or an object does not require an Allocation Token, then the server SHOULD return the availability status as unavailable (e.g., "avail" attribute is "0" or "false").</li>
+  <li>If an object requires an Allocation Token and the Allocation Token does not apply to the object, then the server SHOULD return the availability status as unavailable (e.g., "avail" attribute is "0" or "false").</li>
   <li>If an object does not require an Allocation Token, the server MAY return the availability status as available (e.g., "avail" attribute is "1" or "true").</li>
 </ol>
 <p>Example &lt;check&gt; domain response for a &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt; extension:</p>
@@ -613,8 +615,7 @@ S:  &lt;resData&gt;
 S:   &lt;domain:chkData
 S:     xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
 S:    &lt;domain:cd&gt;
-S:     &lt;domain:name avail="0"&gt;allocation.example&lt;/domain:name&gt;
-S:     &lt;domain:reason&gt;Allocation Token mismatch&lt;/domain:reason&gt;
+S:     &lt;domain:name avail="1"&gt;allocation.example&lt;/domain:name&gt;
 S:    &lt;/domain:cd&gt;
 S:   &lt;/domain:chkData&gt;
 S:  &lt;/resData&gt;
@@ -647,7 +648,7 @@ C:  &lt;/extension&gt;
 C:  &lt;clTRID&gt;ABC-DEF-12345&lt;/clTRID&gt;
 C: &lt;/command&gt;
 C:&lt;/epp&gt;</pre>
-<p>Example &lt;check&gt; domain response for multiple domain names in the &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt; extension:</p>
+<p>Example &lt;check&gt; domain response for multiple domain names in the &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt; extension, where the Allocation Token 'abc123' matches allocation.example but does not match allocation2.example:</p>
 <pre>
 
 S:&lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -660,11 +661,11 @@ S:  &lt;resData&gt;
 S:   &lt;domain:chkData
 S:     xmlns:domain="urn:ietf:params:xml:ns:domain-1.0"&gt;
 S:    &lt;domain:cd&gt;
-S:     &lt;domain:name avail="0"&gt;allocation.example&lt;/domain:name&gt;
-S:     &lt;domain:reason&gt;Allocation Token mismatch&lt;/domain:reason&gt;
+S:     &lt;domain:name avail="1"&gt;allocation.example&lt;/domain:name&gt;
 S:    &lt;/domain:cd&gt;
 S:    &lt;domain:cd&gt;
-S:     &lt;domain:name avail="1"&gt;allocation2.example&lt;/domain:name&gt;
+S:     &lt;domain:name avail="0"&gt;allocation2.example&lt;/domain:name&gt;
+S:     &lt;domain:reason&gt;Allocation Token mismatch&lt;/domain:reason&gt;
 S:    &lt;/domain:cd&gt;
 S:   &lt;/domain:chkData&gt;
 S:  &lt;/resData&gt;
@@ -816,9 +817,9 @@ C:&lt;/epp&gt;</pre>
 <pre>
 BEGIN
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;schema xmlns="http://www.w3.org/2001/XMLSchema" 
-  xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0" 
-  targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0" 
+&lt;schema xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:allocationToken="urn:ietf:params:xml:ns:allocationToken-1.0"
+  targetNamespace="urn:ietf:params:xml:ns:allocationToken-1.0"
   elementFormDefault="qualified"&gt;
   &lt;annotation&gt;
     &lt;documentation&gt;
@@ -826,7 +827,7 @@ BEGIN
       Allocation Token Extension
     &lt;/documentation&gt;
   &lt;/annotation&gt;
-  
+
   &lt;!-- Element used in info command to get allocation token. --&gt;
   &lt;element name="info"&gt;
     &lt;complexType&gt;
@@ -835,17 +836,17 @@ BEGIN
       &lt;/complexContent&gt;
     &lt;/complexType&gt;
   &lt;/element&gt;
-  
+
   &lt;!-- Allocation Token used in transform
     commands and info response --&gt;
-  &lt;element name="allocationToken" 
+  &lt;element name="allocationToken"
     type="allocationToken:allocationTokenType" /&gt;
   &lt;simpleType name="allocationTokenType"&gt;
     &lt;restriction base="token"&gt;
       &lt;minLength value="1" /&gt;
     &lt;/restriction&gt;
   &lt;/simpleType&gt;
-  
+
 &lt;!-- End of schema. --&gt;
 &lt;/schema&gt;
 END</pre>
@@ -931,7 +932,7 @@ END</pre>
 </ol>
 <h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#Acknowledgements" id="Acknowledgements">Acknowledgements</a></h1>
 <p id="rfc.section.8.p.1">The authors wish to acknowledge the original concept for this draft and the efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</p>
-<p id="rfc.section.8.p.2">Special suggestions that have been incorporated into this document were provided by Scott Hollenbeck, Benjamin Kaduk, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, Eric Rescoria, and Adam Roach.</p>
+<p id="rfc.section.8.p.2">Special suggestions that have been incorporated into this document were provided by Ben Campbell, Scott Hollenbeck, Benjamin Kaduk, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer, Patrick Mevzek, Eric Rescoria, and Adam Roach.</p>
 <h1 id="rfc.references"><a href="#rfc.references">9.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">9.1.</a> Normative References</h1>
 <table>
@@ -1100,6 +1101,12 @@ END</pre>
 
 <ol>
   <li>Removed the old duplicate "Authorized clients MAY retrieve..." sentence from section 3.1.2 "EPP &lt;info&gt; Command".</li>
+</ol>
+<h1 id="rfc.appendix.A.17"><a href="#rfc.appendix.A.17">A.17.</a> <a href="#version-WG11-to-WG12" id="version-WG11-to-WG12">Change from REGEXT 11 to REGEXT 12</a></h1>
+<p/>
+
+<ol>
+  <li>Revised the example &lt;check&gt; domain response to first include the positive case for allocation.example, and to second include the negative case for allocation2.example, based on feedback from Ben Campbell.  The caption was revised for the example to include the text ", where the Allocation Token 'abc123' matches allocation.example but does not match allocation2.example".</li>
 </ol>
 <h1 id="rfc.authors">
   <a href="#rfc.authors">Authors' Addresses</a>
