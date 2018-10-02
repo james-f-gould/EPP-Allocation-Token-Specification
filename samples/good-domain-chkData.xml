@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<epp xmlns="urn:ietf:params:xml:ns:epp-1.0">
+ <response>
+  <result code="1000">
+   <msg lang="en-US">Command completed successfully</msg>
+  </result>
+  <resData>
+   <domain:chkData
+     xmlns:domain="urn:ietf:params:xml:ns:domain-1.0">
+    <domain:cd>
+     <domain:name avail="1">allocation.example</domain:name>
+    </domain:cd>
+    <domain:cd>
+     <domain:name avail="0">allocation2.example</domain:name>
+     <domain:reason>Allocation Token mismatch</domain:reason>
+    </domain:cd>
+   </domain:chkData>
+  </resData>
+  <trID>
+   <clTRID>ABC-DEF-12345</clTRID>
+   <svTRID>54321-XYZ</svTRID>
+  </trID>
+ </response>
+</epp>

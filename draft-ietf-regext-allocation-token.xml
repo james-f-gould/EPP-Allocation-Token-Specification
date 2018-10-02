@@ -42,7 +42,7 @@
 <?rfc inline="yes" ?>
 <!-- inline cref output -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="std" docName="draft-ietf-regext-allocation-token-11" ipr="trust200902">
+<rfc category="std" docName="draft-ietf-regext-allocation-token-12" ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
      you can add the attributes updates="NNNN" and obsoletes="NNNN"
@@ -98,7 +98,7 @@
       </address>
     </author>
 
-    <date day="4" month="September" year="2018"/>
+    <date day="28" month="September" year="2018"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -324,7 +324,8 @@ C:</epp>]]></artwork>
           <figure>
             <preamble>Example &lt;check&gt; domain response for multiple domain names in
             the &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt;
-            extension:</preamble>
+            extension, where the Allocation Token 'abc123' matches allocation.example but 
+            does not match allocation2.example:</preamble>
 
             <artwork>
 <![CDATA[
@@ -825,7 +826,7 @@ END]]></artwork>
       efforts in the initial versions of this draft by Trung Tran and Sharon Wodjenski.</t>
 
       <t>Special suggestions that have been incorporated into this document
-      were provided by Scott Hollenbeck, Benjamin Kaduk, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer,
+      were provided by Ben Campbell, Scott Hollenbeck, Benjamin Kaduk, Mirja Kuehlewind, Rubens Kuhl, Alexander Mayrhofer,
       Patrick Mevzek, Eric Rescoria, and Adam Roach.</t>
 
     </section>
@@ -1053,6 +1054,12 @@ marks)</t>
     <section title="Change from REGEXT 10 to REGEXT 11" anchor="version-WG10-to-WG11">
       <t><list style="numbers">
         <t>Removed the old duplicate "Authorized clients MAY retrieve..." sentence from section 3.1.2 "EPP &lt;info&gt; Command".</t>
+      </list></t>
+    </section>
+    <section title="Change from REGEXT 11 to REGEXT 12" anchor="version-WG11-to-WG12">
+      <t><list style="numbers">
+        <t>Revised the example &lt;check&gt; domain response to first include the positive case for allocation.example, and to second include the negative case for allocation2.example, based on feedback 
+        from Ben Campbell.  The caption was revised for the example to include the text ", where the Allocation Token 'abc123' matches allocation.example but does not match allocation2.example".</t>
       </list></t>
     </section>
 
