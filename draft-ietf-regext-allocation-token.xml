@@ -98,7 +98,7 @@
       </address>
     </author>
 
-    <date day="28" month="September" year="2018"/>
+    <date day="04" month="October" year="2018"/>
 
     <abstract>
       <t>This document describes an Extensible Provisioning Protocol (EPP)
@@ -324,7 +324,7 @@ C:</epp>]]></artwork>
           <figure>
             <preamble>Example &lt;check&gt; domain response for multiple domain names in
             the &lt;check&gt; command using the &lt;allocationToken:allocationToken&gt;
-            extension, where the Allocation Token 'abc123' matches allocation.example but 
+            extension, where the Allocation Token 'abc123' matches allocation.example but
             does not match allocation2.example:</preamble>
 
             <artwork>
@@ -1058,7 +1058,7 @@ marks)</t>
     </section>
     <section title="Change from REGEXT 11 to REGEXT 12" anchor="version-WG11-to-WG12">
       <t><list style="numbers">
-        <t>Revised the example &lt;check&gt; domain response to first include the positive case for allocation.example, and to second include the negative case for allocation2.example, based on feedback 
+        <t>Revised the example &lt;check&gt; domain response to first include the positive case for allocation.example, and to second include the negative case for allocation2.example, based on feedback
         from Ben Campbell.  The caption was revised for the example to include the text ", where the Allocation Token 'abc123' matches allocation.example but does not match allocation2.example".</t>
       </list></t>
     </section>
